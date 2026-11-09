@@ -21,6 +21,18 @@ export class AuthController {
     return { user: result.user };
   }
 
+  @Post('register')
+  @HttpCode(201)
+  async register(
+    @Body() body: { email?: unknown; password?: unknown },
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    const result = await this.authService.register(body);
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1_000);
+    response.cookie(SESSION_COOKIE_NAME, result.token, sessionCookieOptions(expiresAt));
+    return { user: result.user };
+  }
+
   @Get('me')
   @UseGuards(SessionAuthGuard)
   me(@Req() request: RequestWithAuth) {

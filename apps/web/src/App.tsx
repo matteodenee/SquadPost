@@ -57,9 +57,11 @@ async function readApiError(response: Response): Promise<string> {
 
 export function App() {
   const [status, setStatus] = useState<'loading' | 'guest' | 'authenticated'>('loading');
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
   const [user, setUser] = useState<AuthenticatedUser | null>(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
@@ -74,13 +76,25 @@ export function App() {
       .catch(() => setStatus('guest'));
   }, []);
 
-  async function handleLogin(event: FormEvent<HTMLFormElement>) {
+  function changeAuthMode(mode: 'login' | 'register') {
+    setAuthMode(mode);
+    setError('');
+    setPassword('');
+    setPasswordConfirmation('');
+  }
+
+  async function handleAuthentication(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (authMode === 'register' && password !== passwordConfirmation) {
+      setError('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
     setSubmitting(true);
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`/api/auth/${authMode === 'register' ? 'register' : 'login'}`, {
         method: 'POST',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
@@ -91,9 +105,10 @@ export function App() {
       const body = (await response.json()) as { user: AuthenticatedUser };
       setUser(body.user);
       setPassword('');
+      setPasswordConfirmation('');
       setStatus('authenticated');
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : 'Connexion impossible.');
+      setError(reason instanceof Error ? reason.message : 'Authentification impossible.');
     } finally {
       setSubmitting(false);
     }
@@ -190,14 +205,37 @@ export function App() {
         </p>
       </section>
 
-      <section className="login-card" aria-labelledby="login-title">
-        <div>
-          <p className="panel-label">Accès sécurisé</p>
-          <h2 id="login-title">Connexion</h2>
-          <p className="muted">Utilisez votre compte SquadPost.</p>
+      <section className="login-card" aria-labelledby="auth-title">
+        <div className="auth-mode-switch" aria-label="Choisir une action" role="group">
+          <button
+            aria-pressed={authMode === 'login'}
+            className={authMode === 'login' ? 'active' : ''}
+            onClick={() => changeAuthMode('login')}
+            type="button"
+          >
+            Connexion
+          </button>
+          <button
+            aria-pressed={authMode === 'register'}
+            className={authMode === 'register' ? 'active' : ''}
+            onClick={() => changeAuthMode('register')}
+            type="button"
+          >
+            Créer un compte
+          </button>
         </div>
 
-        <form onSubmit={(event) => void handleLogin(event)}>
+        <div>
+          <p className="panel-label">Accès sécurisé</p>
+          <h2 id="auth-title">{authMode === 'login' ? 'Connexion' : 'Créer un compte'}</h2>
+          <p className="muted">
+            {authMode === 'login'
+              ? 'Utilisez votre compte SquadPost.'
+              : 'Votre nouveau compte sera créé avec le rôle Joueur.'}
+          </p>
+        </div>
+
+        <form onSubmit={(event) => void handleAuthentication(event)}>
           <label>
             Adresse e-mail
             <input
@@ -214,7 +252,8 @@ export function App() {
           <label>
             Mot de passe
             <input
-              autoComplete="current-password"
+              autoComplete={authMode === 'register' ? 'new-password' : 'current-password'}
+              maxLength={128}
               minLength={12}
               name="password"
               onChange={(event) => setPassword(event.target.value)}
@@ -224,17 +263,39 @@ export function App() {
               value={password}
             />
           </label>
+          {authMode === 'register' && (
+            <label>
+              Confirmer le mot de passe
+              <input
+                autoComplete="new-password"
+                maxLength={128}
+                minLength={12}
+                name="passwordConfirmation"
+                onChange={(event) => setPasswordConfirmation(event.target.value)}
+                placeholder="Saisissez à nouveau votre mot de passe"
+                required
+                type="password"
+                value={passwordConfirmation}
+              />
+            </label>
+          )}
           {error && (
             <p className="form-error" role="alert">
               {error}
             </p>
           )}
           <button className="button button--primary" disabled={submitting} type="submit">
-            {submitting ? 'Connexion…' : 'Se connecter'}
+            {submitting
+              ? authMode === 'login'
+                ? 'Connexion…'
+                : 'Création…'
+              : authMode === 'login'
+                ? 'Se connecter'
+                : 'Créer mon compte joueur'}
           </button>
         </form>
 
-        {import.meta.env.DEV && (
+        {import.meta.env.DEV && authMode === 'login' && (
           <aside className="demo-hint">
             <strong>Comptes de démonstration</strong>
             <span>player@, communication@ ou admin@squadpost.local</span>

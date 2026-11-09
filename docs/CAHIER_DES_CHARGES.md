@@ -7,7 +7,7 @@ Application web de communication pour clubs sportifs amateurs/universitaires, d'
 ## 2. Périmètre V1 ferme
 
 ### Comptes / clubs
-- Inscription ouverte par e-mail et mot de passe.
+- Inscription ouverte par e-mail et mot de passe. Toute inscription publique crée obligatoirement un compte `PLAYER` ; seuls les administrateurs pourront ensuite attribuer un autre rôle.
 - Après inscription : créer un club ou rejoindre via invitation.
 - Un compte peut être membre de plusieurs clubs, avec changement de contexte.
 - Espaces clubs isolés (joueurs, médias, compétitions, modèles, matchs).

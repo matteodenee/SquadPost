@@ -3,6 +3,7 @@
 ## US-01 — Créer un club
 **En tant que** nouvel utilisateur, **je veux** m'inscrire puis créer mon club ou rejoindre un club via invitation, **afin de** gérer un espace de communication.
 - Email unique, mot de passe sécurisé.
+- Une inscription publique crée toujours un compte `PLAYER` et ouvre directement une session ; aucun rôle privilégié ne peut être choisi dans ce parcours.
 - Club créé avec nom, nom court, logo/couleurs, sport principal.
 - Une invitation vérifiée ouvre l'accès au club ; aucun accès transversal aux autres clubs.
 - Le compte possède un rôle global unique : `PLAYER`, `COM_MANAGER` ou `ADMIN`. L'adhésion à un club ne modifie pas ce rôle.
