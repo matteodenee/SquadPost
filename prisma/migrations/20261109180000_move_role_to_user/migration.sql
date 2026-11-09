@@ -1,0 +1,9 @@
+CREATE TYPE "UserRole" AS ENUM ('PLAYER', 'COM_MANAGER', 'ADMIN');
+
+ALTER TABLE "User"
+ADD COLUMN "role" "UserRole" NOT NULL DEFAULT 'PLAYER';
+
+ALTER TABLE "ClubMembership"
+DROP COLUMN "role";
+
+DROP TYPE "ClubRole";

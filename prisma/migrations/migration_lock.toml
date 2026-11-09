@@ -1,0 +1,2 @@
+# Ne pas modifier manuellement après le déploiement des migrations.
+provider = "postgresql"

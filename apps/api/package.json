@@ -1,0 +1,33 @@
+{
+  "name": "@squadpost/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "build": "tsc -p tsconfig.build.json",
+    "seed:dev": "tsx scripts/seed-development.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
+    "test": "vitest run --exclude test/**/*.e2e.spec.ts",
+    "test:integration": "vitest run test/health.e2e.spec.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.4.0",
+    "@nestjs/core": "12.4.0",
+    "@nestjs/platform-express": "12.4.0",
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "pg": "8.16.3",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "12.4.0",
+    "@types/express": "5.0.6",
+    "@types/pg": "8.15.5",
+    "@types/supertest": "7.2.1",
+    "supertest": "7.3.1",
+    "vitest": "5.1.0"
+  }
+}
