@@ -1,0 +1,124 @@
+{
+  "id": "barbarians-demo-2026-11-15",
+  "fields": {
+    "roundLabel": "Journée 2",
+    "matchDate": "15 novembre 2026",
+    "homeTeam": "Barbarians Montpellier",
+    "awayTeam": "MOMA"
+  },
+  "starters": [
+    {
+      "id": "p01",
+      "name": "Léo Martin",
+      "photoPath": "tests/fixtures/players/joueur_01.jpg",
+      "sportPosition": "pilier-gauche",
+      "jerseyNumber": 1,
+      "crop": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 }
+    },
+    {
+      "id": "p02",
+      "name": "Noé Dubois",
+      "photoPath": "tests/fixtures/players/joueur_02.jpg",
+      "sportPosition": "talonneur",
+      "jerseyNumber": 2,
+      "crop": { "zoom": 1, "offsetY": -0.02 }
+    },
+    {
+      "id": "p03",
+      "name": "Éliott Bernard",
+      "photoPath": "tests/fixtures/players/joueur_03.jpg",
+      "sportPosition": "pilier-droit",
+      "jerseyNumber": 3,
+      "crop": { "zoom": 1, "offsetX": 0.03, "offsetY": -0.02 }
+    },
+    {
+      "id": "p04",
+      "name": "Arthur Thomas",
+      "photoPath": "tests/fixtures/players/joueur_04.jpg",
+      "sportPosition": "deuxieme-ligne-gauche",
+      "jerseyNumber": 4
+    },
+    {
+      "id": "p05",
+      "name": "Maël Robert",
+      "photoPath": "tests/fixtures/players/joueur_05.jpg",
+      "sportPosition": "deuxieme-ligne-droit",
+      "jerseyNumber": 5
+    },
+    {
+      "id": "p09",
+      "name": "Jules Richard",
+      "photoPath": "tests/fixtures/players/joueur_06.jpg",
+      "sportPosition": "demi-de-melee",
+      "jerseyNumber": 9
+    },
+    {
+      "id": "p10",
+      "name": "Théo Petit",
+      "photoPath": "tests/fixtures/players/joueur_07.jpg",
+      "sportPosition": "demi-ouverture",
+      "jerseyNumber": 10
+    },
+    {
+      "id": "p12",
+      "name": "Raphaël Durand",
+      "photoPath": "tests/fixtures/players/joueur_08.jpg",
+      "sportPosition": "centre-gauche",
+      "jerseyNumber": 12
+    },
+    {
+      "id": "p13",
+      "name": "Louis Leroy",
+      "photoPath": "tests/fixtures/players/joueur_09.jpg",
+      "sportPosition": "centre-droit",
+      "jerseyNumber": 13
+    },
+    {
+      "id": "p14",
+      "name": "Alexandre de La Tour",
+      "photoPath": "tests/fixtures/players/joueur_10.jpg",
+      "sportPosition": "arriere",
+      "jerseyNumber": 14,
+      "crop": { "focalPoint": { "x": 0.56, "y": 0.42 }, "zoom": 1.03, "offsetY": -0.01 }
+    }
+  ],
+  "finishers": [
+    {
+      "id": "p16",
+      "name": "Clément André",
+      "photoPath": "tests/fixtures/players/joueur_16.jpg",
+      "sportPosition": "remplacant",
+      "jerseyNumber": 16
+    },
+    {
+      "id": "p17",
+      "name": "Sébastien François",
+      "photoPath": "tests/fixtures/players/joueur_17.jpg",
+      "sportPosition": "remplacant",
+      "jerseyNumber": 17,
+      "crop": { "zoom": 1, "offsetX": -0.03 }
+    },
+    {
+      "id": "p18",
+      "name": "Gaël Lefèvre",
+      "photoPath": "tests/fixtures/players/joueur_18.jpg",
+      "sportPosition": "remplacant",
+      "jerseyNumber": 18
+    },
+    {
+      "id": "p19",
+      "name": "Jean-Baptiste Noël",
+      "photoPath": "tests/fixtures/players/joueur_19.jpg",
+      "sportPosition": "remplacant",
+      "jerseyNumber": 19
+    },
+    {
+      "id": "p20",
+      "name": "Maximilien Saint-Clair",
+      "photoPath": "tests/fixtures/players/joueur_20.jpg",
+      "sportPosition": "remplacant",
+      "jerseyNumber": 20,
+      "crop": { "zoom": 1, "offsetY": -0.03 }
+    }
+  ]
+}

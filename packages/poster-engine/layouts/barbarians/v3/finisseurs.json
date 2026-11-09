@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v3-finisseurs-instagram",
+  "kind": "finishers",
+  "canvas": { "width": 1080, "height": 1350 },
+  "sourceCanvas": { "width": 479, "height": 660, "fit": "fill" },
+  "playerCollection": "finishers",
+  "requiredPlayerCount": 5,
+  "layerOrder": ["photos", "numbers", "names"],
+  "playerSlots": [
+    {
+      "id": "finisher-16",
+      "order": 0,
+      "fixedDisplayNumber": 16,
+      "photo": {
+        "x": 88,
+        "y": 536,
+        "width": 247,
+        "height": 197,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 24,
+          "cutouts": [{ "x": 0, "y": 0, "width": 91, "height": 50 }]
+        }
+      },
+      "number": {
+        "box": { "x": 68, "y": 517, "width": 117, "height": 70 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 38
+      },
+      "name": {
+        "x": 65,
+        "y": 734,
+        "width": 307,
+        "height": 63,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 27
+        }
+      }
+    },
+    {
+      "id": "finisher-17",
+      "order": 1,
+      "fixedDisplayNumber": 17,
+      "photo": {
+        "x": 444,
+        "y": 536,
+        "width": 241,
+        "height": 197,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 24,
+          "cutouts": [{ "x": 0, "y": 0, "width": 91, "height": 50 }]
+        }
+      },
+      "number": {
+        "box": { "x": 422, "y": 517, "width": 117, "height": 70 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 38
+      },
+      "name": {
+        "x": 415,
+        "y": 734,
+        "width": 307,
+        "height": 63,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 27
+        }
+      }
+    },
+    {
+      "id": "finisher-18",
+      "order": 2,
+      "fixedDisplayNumber": 18,
+      "photo": {
+        "x": 795,
+        "y": 536,
+        "width": 273,
+        "height": 197,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 24,
+          "cutouts": [{ "x": 0, "y": 0, "width": 91, "height": 50 }]
+        }
+      },
+      "number": {
+        "box": { "x": 771, "y": 517, "width": 117, "height": 70 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 38
+      },
+      "name": {
+        "x": 769,
+        "y": 734,
+        "width": 307,
+        "height": 63,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 27
+        }
+      }
+    },
+    {
+      "id": "finisher-19",
+      "order": 3,
+      "fixedDisplayNumber": 19,
+      "photo": {
+        "x": 230,
+        "y": 851,
+        "width": 304,
+        "height": 194,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 24,
+          "cutouts": [{ "x": 0, "y": 0, "width": 103, "height": 51 }]
+        }
+      },
+      "number": {
+        "box": { "x": 210, "y": 832, "width": 128, "height": 72 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 198,
+        "y": 1047,
+        "width": 361,
+        "height": 70,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 29
+        }
+      }
+    },
+    {
+      "id": "finisher-20",
+      "order": 4,
+      "fixedDisplayNumber": 20,
+      "photo": {
+        "x": 622,
+        "y": 851,
+        "width": 312,
+        "height": 194,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 24,
+          "cutouts": [{ "x": 0, "y": 0, "width": 103, "height": 51 }]
+        }
+      },
+      "number": {
+        "box": { "x": 600, "y": 832, "width": 128, "height": 72 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 598,
+        "y": 1047,
+        "width": 363,
+        "height": 70,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 29
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Le fond v3 conserve ses cinq cadres, badges vides et bandeaux vierges; aucune forme n'est redessinée."
+  ]
+}

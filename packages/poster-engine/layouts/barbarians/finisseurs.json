@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-finisseurs-v1",
+  "kind": "finishers",
+  "canvas": { "width": 941, "height": 1672 },
+  "playerCollection": "finishers",
+  "playerSlots": [
+    {
+      "id": "finisher-16",
+      "order": 0,
+      "fixedDisplayNumber": 16,
+      "photo": {
+        "x": 63,
+        "y": 630,
+        "width": 231,
+        "height": 201,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 53,
+        "y": 844,
+        "width": 251,
+        "height": 43,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 36,
+          "minFontSize": 17,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 10
+        }
+      }
+    },
+    {
+      "id": "finisher-17",
+      "order": 1,
+      "fixedDisplayNumber": 17,
+      "photo": {
+        "x": 363,
+        "y": 630,
+        "width": 232,
+        "height": 201,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 353,
+        "y": 844,
+        "width": 252,
+        "height": 43,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 36,
+          "minFontSize": 17,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 10
+        }
+      }
+    },
+    {
+      "id": "finisher-18",
+      "order": 2,
+      "fixedDisplayNumber": 18,
+      "photo": {
+        "x": 661,
+        "y": 630,
+        "width": 232,
+        "height": 201,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 651,
+        "y": 844,
+        "width": 252,
+        "height": 43,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 36,
+          "minFontSize": 17,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 10
+        }
+      }
+    },
+    {
+      "id": "finisher-19",
+      "order": 3,
+      "fixedDisplayNumber": 19,
+      "photo": {
+        "x": 177,
+        "y": 964,
+        "width": 251,
+        "height": 210,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 167,
+        "y": 1187,
+        "width": 271,
+        "height": 43,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 36,
+          "minFontSize": 17,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 10
+        }
+      }
+    },
+    {
+      "id": "finisher-20",
+      "order": 4,
+      "fixedDisplayNumber": 20,
+      "photo": {
+        "x": 522,
+        "y": 964,
+        "width": 250,
+        "height": 211,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 512,
+        "y": 1188,
+        "width": 270,
+        "height": 43,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 36,
+          "minFontSize": 17,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 10
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Les numéros 16 à 20 sont intégrés au fond et ne sont pas redessinés par le moteur."
+  ]
+}

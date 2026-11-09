@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v2-presentation-instagram",
+  "kind": "presentation",
+  "canvas": { "width": 1080, "height": 1350 },
+  "sourceCanvas": { "width": 1122, "height": 1402, "fit": "cover" },
+  "playerSlots": [],
+  "graphicRegions": [
+    {
+      "id": "round-clean-zone",
+      "box": { "x": 313, "y": 577, "width": 454, "height": 75 },
+      "fill": "#f6f7f5",
+      "cornerRadius": 3
+    },
+    {
+      "id": "home-team-panel",
+      "box": { "x": 151, "y": 674, "width": 322, "height": 286 },
+      "fill": "#05274e",
+      "borderColor": "#1676e8",
+      "borderWidth": 3,
+      "cornerRadius": 18
+    },
+    {
+      "id": "away-team-panel",
+      "box": { "x": 607, "y": 674, "width": 322, "height": 286 },
+      "fill": "#05274e",
+      "borderColor": "#1676e8",
+      "borderWidth": 3,
+      "cornerRadius": 18
+    },
+    {
+      "id": "date-clean-zone",
+      "box": { "x": 278, "y": 980, "width": 524, "height": 70 },
+      "fill": "#f6f7f5",
+      "cornerRadius": 3
+    }
+  ],
+  "imageSlots": [
+    {
+      "key": "homeLogo",
+      "box": { "x": 194, "y": 696, "width": 236, "height": 192 },
+      "fit": "contain"
+    },
+    {
+      "key": "awayLogo",
+      "box": { "x": 650, "y": 696, "width": 236, "height": 192 },
+      "fit": "contain"
+    }
+  ],
+  "fieldSlots": [
+    {
+      "key": "roundLabel",
+      "box": { "x": 327, "y": 584, "width": 426, "height": 60 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 48,
+        "minFontSize": 28,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#f6f7f5",
+        "horizontalPadding": 18
+      }
+    },
+    {
+      "key": "homeTeam",
+      "box": { "x": 167, "y": 895, "width": 290, "height": 48 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 27,
+        "minFontSize": 17,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#05274e",
+        "horizontalPadding": 14
+      }
+    },
+    {
+      "key": "awayTeam",
+      "box": { "x": 623, "y": 895, "width": 290, "height": 48 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 27,
+        "minFontSize": 17,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#05274e",
+        "horizontalPadding": 14
+      }
+    },
+    {
+      "key": "matchDate",
+      "box": { "x": 292, "y": 988, "width": 496, "height": 54 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 41,
+        "minFontSize": 23,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#f6f7f5",
+        "horizontalPadding": 18
+      }
+    }
+  ],
+  "layerOrder": ["graphicRegions", "images", "fields"],
+  "fixedArtwork": [
+    "Le fond de présentation reste aplati. Les anciennes données sont masquées par quatre zones opaques explicitement déclarées; les logos de démonstration sont des extractions de test et devront être remplacés par des PNG transparents fournis par les clubs."
+  ]
+}

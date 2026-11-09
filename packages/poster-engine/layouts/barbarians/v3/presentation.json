@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v3-presentation-instagram",
+  "kind": "presentation",
+  "canvas": { "width": 1080, "height": 1350 },
+  "sourceCanvas": { "width": 479, "height": 718, "fit": "fill" },
+  "playerSlots": [],
+  "imageSlots": [
+    {
+      "key": "homeLogo",
+      "box": { "x": 122, "y": 670, "width": 300, "height": 190 },
+      "fit": "contain"
+    },
+    {
+      "key": "awayLogo",
+      "box": { "x": 725, "y": 670, "width": 300, "height": 190 },
+      "fit": "contain"
+    }
+  ],
+  "fieldSlots": [
+    {
+      "key": "roundLabel",
+      "box": { "x": 225, "y": 542, "width": 630, "height": 78 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 42,
+        "minFontSize": 25,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#ffffff",
+        "horizontalPadding": 22
+      }
+    },
+    {
+      "key": "homeTeam",
+      "box": { "x": 105, "y": 866, "width": 345, "height": 46 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 25,
+        "minFontSize": 15,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#062750",
+        "horizontalPadding": 16
+      }
+    },
+    {
+      "key": "awayTeam",
+      "box": { "x": 698, "y": 866, "width": 345, "height": 46 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 25,
+        "minFontSize": 15,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#062750",
+        "horizontalPadding": 16
+      }
+    },
+    {
+      "key": "matchDate",
+      "box": { "x": 220, "y": 978, "width": 640, "height": 72 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 38,
+        "minFontSize": 23,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#ffffff",
+        "horizontalPadding": 25
+      }
+    }
+  ],
+  "layerOrder": ["images", "fields"],
+  "fixedArtwork": [
+    "Le fond v3 est vierge dans toutes les zones variables; le moteur ajoute directement les logos et textes sans panneau de masquage."
+  ]
+}

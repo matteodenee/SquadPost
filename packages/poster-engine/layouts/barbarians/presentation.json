@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-presentation-v1",
+  "kind": "presentation",
+  "canvas": { "width": 1122, "height": 1402 },
+  "playerSlots": [],
+  "fieldSlots": [
+    {
+      "key": "roundLabel",
+      "box": { "x": 330, "y": 603, "width": 464, "height": 70 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 55,
+        "minFontSize": 30,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#f5f7f7",
+        "horizontalPadding": 16
+      }
+    },
+    {
+      "key": "matchDate",
+      "box": { "x": 294, "y": 1023, "width": 534, "height": 58 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 45,
+        "minFontSize": 24,
+        "fontWeight": 800,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#f5f7f7",
+        "horizontalPadding": 14
+      }
+    }
+  ],
+  "fixedArtwork": [
+    "Les deux logos, le texte MOMA et le séparateur VS sont intégrés au fond source.",
+    "Seuls les intérieurs des bandeaux de journée et de date sont variables dans ce prototype."
+  ]
+}

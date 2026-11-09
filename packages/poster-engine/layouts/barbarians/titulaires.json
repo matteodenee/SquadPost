@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-titulaires-v1",
+  "kind": "starters",
+  "canvas": { "width": 941, "height": 1671 },
+  "playerCollection": "starters",
+  "playerSlots": [
+    {
+      "id": "starter-01",
+      "order": 0,
+      "fixedDisplayNumber": 1,
+      "sportPositionHint": "pilier-gauche",
+      "photo": {
+        "x": 150,
+        "y": 582,
+        "width": 144,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 139,
+        "y": 698,
+        "width": 168,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-02",
+      "order": 1,
+      "fixedDisplayNumber": 2,
+      "sportPositionHint": "talonneur",
+      "photo": {
+        "x": 403,
+        "y": 582,
+        "width": 144,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 392,
+        "y": 698,
+        "width": 168,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-03",
+      "order": 2,
+      "fixedDisplayNumber": 3,
+      "sportPositionHint": "pilier-droit",
+      "photo": {
+        "x": 655,
+        "y": 582,
+        "width": 144,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 644,
+        "y": 698,
+        "width": 168,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-04",
+      "order": 3,
+      "fixedDisplayNumber": 4,
+      "sportPositionHint": "deuxieme-ligne-gauche",
+      "photo": {
+        "x": 261,
+        "y": 777,
+        "width": 141,
+        "height": 109,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 250,
+        "y": 892,
+        "width": 165,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-05",
+      "order": 4,
+      "fixedDisplayNumber": 5,
+      "sportPositionHint": "deuxieme-ligne-droit",
+      "photo": {
+        "x": 552,
+        "y": 777,
+        "width": 140,
+        "height": 109,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 541,
+        "y": 892,
+        "width": 164,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-06",
+      "order": 5,
+      "fixedDisplayNumber": 6,
+      "sportPositionHint": "troisieme-ligne-gauche",
+      "photo": {
+        "x": 129,
+        "y": 966,
+        "width": 146,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 118,
+        "y": 1082,
+        "width": 170,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-08",
+      "order": 6,
+      "fixedDisplayNumber": 8,
+      "sportPositionHint": "troisieme-ligne-centre",
+      "photo": {
+        "x": 406,
+        "y": 966,
+        "width": 145,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 395,
+        "y": 1082,
+        "width": 169,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-07",
+      "order": 7,
+      "fixedDisplayNumber": 7,
+      "sportPositionHint": "troisieme-ligne-droite",
+      "photo": {
+        "x": 684,
+        "y": 966,
+        "width": 145,
+        "height": 111,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 673,
+        "y": 1083,
+        "width": 169,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-09",
+      "order": 8,
+      "fixedDisplayNumber": 9,
+      "sportPositionHint": "demi-de-melee",
+      "photo": {
+        "x": 246,
+        "y": 1160,
+        "width": 149,
+        "height": 110,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 235,
+        "y": 1276,
+        "width": 173,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    },
+    {
+      "id": "starter-10",
+      "order": 9,
+      "fixedDisplayNumber": 10,
+      "sportPositionHint": "demi-ouverture",
+      "photo": {
+        "x": 550,
+        "y": 1159,
+        "width": 151,
+        "height": 111,
+        "mask": {
+          "mode": "neutral-background",
+          "minLuminance": 150,
+          "maxLuminance": 240,
+          "maxChannelDelta": 8
+        }
+      },
+      "name": {
+        "x": 539,
+        "y": 1276,
+        "width": 175,
+        "height": 31,
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 24,
+          "minFontSize": 13,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 7
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Les numéros 1 à 10 sont intégrés au fond et ne sont pas redessinés par le moteur."
+  ]
+}

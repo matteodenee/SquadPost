@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v2-finisseurs-instagram",
+  "kind": "finishers",
+  "canvas": { "width": 1080, "height": 1350 },
+  "sourceCanvas": { "width": 1122, "height": 1402, "fit": "cover" },
+  "playerCollection": "finishers",
+  "requiredPlayerCount": 5,
+  "layerOrder": ["photos", "frames", "numbers", "nameBanners", "names"],
+  "playerSlots": [
+    {
+      "id": "finisher-16",
+      "order": 0,
+      "fixedDisplayNumber": 16,
+      "photo": {
+        "x": 90,
+        "y": 480,
+        "width": 262,
+        "height": 201,
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 27,
+          "cutouts": [{ "x": 0, "y": 0, "width": 92, "height": 69 }]
+        }
+      },
+      "frame": {
+        "x": 90,
+        "y": 480,
+        "width": 262,
+        "height": 201,
+        "style": { "color": "#ffffff", "strokeWidth": 5, "cornerRadius": 27 }
+      },
+      "number": {
+        "box": { "x": 66, "y": 464, "width": 110, "height": 72 },
+        "backgroundColor": "#062750",
+        "borderColor": "#ffffff",
+        "borderWidth": 5,
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 42
+      },
+      "name": {
+        "x": 52,
+        "y": 678,
+        "width": 324,
+        "height": 68,
+        "banner": { "fill": "#f8f8f8", "slant": 27 },
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 15,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 25
+        }
+      }
+    },
+    {
+      "id": "finisher-17",
+      "order": 1,
+      "fixedDisplayNumber": 17,
+      "photo": {
+        "x": 417,
+        "y": 480,
+        "width": 262,
+        "height": 201,
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 27,
+          "cutouts": [{ "x": 0, "y": 0, "width": 92, "height": 69 }]
+        }
+      },
+      "frame": {
+        "x": 417,
+        "y": 480,
+        "width": 262,
+        "height": 201,
+        "style": { "color": "#ffffff", "strokeWidth": 5, "cornerRadius": 27 }
+      },
+      "number": {
+        "box": { "x": 399, "y": 464, "width": 110, "height": 72 },
+        "backgroundColor": "#062750",
+        "borderColor": "#ffffff",
+        "borderWidth": 5,
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 42
+      },
+      "name": {
+        "x": 385,
+        "y": 678,
+        "width": 321,
+        "height": 68,
+        "banner": { "fill": "#f8f8f8", "slant": 27 },
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 15,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 25
+        }
+      }
+    },
+    {
+      "id": "finisher-18",
+      "order": 2,
+      "fixedDisplayNumber": 18,
+      "photo": {
+        "x": 749,
+        "y": 480,
+        "width": 256,
+        "height": 201,
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 27,
+          "cutouts": [{ "x": 0, "y": 0, "width": 92, "height": 69 }]
+        }
+      },
+      "frame": {
+        "x": 749,
+        "y": 480,
+        "width": 256,
+        "height": 201,
+        "style": { "color": "#ffffff", "strokeWidth": 5, "cornerRadius": 27 }
+      },
+      "number": {
+        "box": { "x": 736, "y": 464, "width": 110, "height": 72 },
+        "backgroundColor": "#062750",
+        "borderColor": "#ffffff",
+        "borderWidth": 5,
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 42
+      },
+      "name": {
+        "x": 714,
+        "y": 678,
+        "width": 316,
+        "height": 68,
+        "banner": { "fill": "#f8f8f8", "slant": 27 },
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 27,
+          "minFontSize": 15,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 25
+        }
+      }
+    },
+    {
+      "id": "finisher-19",
+      "order": 3,
+      "fixedDisplayNumber": 19,
+      "photo": {
+        "x": 212,
+        "y": 794,
+        "width": 282,
+        "height": 204,
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 27,
+          "cutouts": [{ "x": 0, "y": 0, "width": 108, "height": 76 }]
+        }
+      },
+      "frame": {
+        "x": 212,
+        "y": 794,
+        "width": 282,
+        "height": 204,
+        "style": { "color": "#ffffff", "strokeWidth": 5, "cornerRadius": 27 }
+      },
+      "number": {
+        "box": { "x": 194, "y": 777, "width": 119, "height": 76 },
+        "backgroundColor": "#062750",
+        "borderColor": "#ffffff",
+        "borderWidth": 5,
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 44
+      },
+      "name": {
+        "x": 178,
+        "y": 995,
+        "width": 343,
+        "height": 70,
+        "banner": { "fill": "#f8f8f8", "slant": 28 },
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 15,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 27
+        }
+      }
+    },
+    {
+      "id": "finisher-20",
+      "order": 4,
+      "fixedDisplayNumber": 20,
+      "photo": {
+        "x": 583,
+        "y": 794,
+        "width": 292,
+        "height": 204,
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 27,
+          "cutouts": [{ "x": 0, "y": 0, "width": 108, "height": 76 }]
+        }
+      },
+      "frame": {
+        "x": 583,
+        "y": 794,
+        "width": 292,
+        "height": 204,
+        "style": { "color": "#ffffff", "strokeWidth": 5, "cornerRadius": 27 }
+      },
+      "number": {
+        "box": { "x": 567, "y": 777, "width": 119, "height": 76 },
+        "backgroundColor": "#062750",
+        "borderColor": "#ffffff",
+        "borderWidth": 5,
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 44
+      },
+      "name": {
+        "x": 556,
+        "y": 995,
+        "width": 348,
+        "height": 70,
+        "banner": { "fill": "#f8f8f8", "slant": 28 },
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 15,
+          "fontWeight": 800,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#f8f8f8",
+          "horizontalPadding": 27
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Le décor et le titre restent dans le fond aplati; cadres, badges, numéros et bandeaux simples sont redessinés au-dessus des photos."
+  ]
+}

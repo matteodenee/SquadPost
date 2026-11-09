@@ -1,0 +1,113 @@
+{
+  "id": "barbarians-reels-test",
+  "fields": {},
+  "starters": [
+    {
+      "id": "reel-01",
+      "name": "JOUEUR 01",
+      "photoPath": "tests/fixtures/players/reels/matteo_1.png",
+      "jerseyNumber": 1,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-02",
+      "name": "JOUEUR 02",
+      "photoPath": "tests/fixtures/players/reels/hugo_2.png",
+      "jerseyNumber": 2,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-03",
+      "name": "JOUEUR 03",
+      "photoPath": "tests/fixtures/players/reels/bastien_3.png",
+      "jerseyNumber": 3,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-04",
+      "name": "JOUEUR 04",
+      "photoPath": "tests/fixtures/players/reels/gaspard_4.png",
+      "jerseyNumber": 4,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-05",
+      "name": "JOUEUR 05",
+      "photoPath": "tests/fixtures/players/reels/paul_5.png",
+      "jerseyNumber": 5,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-06",
+      "name": "JOUEUR 06",
+      "photoPath": "tests/fixtures/players/reels/martins_9.png",
+      "jerseyNumber": 9,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-07",
+      "name": "JOUEUR 07",
+      "photoPath": "tests/fixtures/players/reels/noé_10.png",
+      "jerseyNumber": 10,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-08",
+      "name": "JOUEUR 08",
+      "photoPath": "tests/fixtures/players/reels/antonin_12.png",
+      "jerseyNumber": 12,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-09",
+      "name": "JOUEUR 09",
+      "photoPath": "tests/fixtures/players/reels/baptiste_13.png",
+      "jerseyNumber": 13,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-10",
+      "name": "JOUEUR 10",
+      "photoPath": "tests/fixtures/players/reels/pierre Martinez_14.png",
+      "jerseyNumber": 14,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    }
+  ],
+  "finishers": [
+    {
+      "id": "reel-11",
+      "name": "JOUEUR 11",
+      "photoPath": "tests/fixtures/players/reels/nolan_16.png",
+      "jerseyNumber": 16,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-12",
+      "name": "JOUEUR 12",
+      "photoPath": "tests/fixtures/players/reels/rody_17.png",
+      "jerseyNumber": 17,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-13",
+      "name": "JOUEUR 13",
+      "photoPath": "tests/fixtures/players/reels/julien_18.png",
+      "jerseyNumber": 18,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-14",
+      "name": "JOUEUR 14",
+      "photoPath": "tests/fixtures/players/reels/aurelien_19.png",
+      "jerseyNumber": 19,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    },
+    {
+      "id": "reel-15",
+      "name": "JOUEUR 15",
+      "photoPath": "tests/fixtures/players/reels/mathys.png",
+      "jerseyNumber": 20,
+      "crop": { "fit": "contain", "containPosition": "bottom", "trimTransparent": true }
+    }
+  ]
+}

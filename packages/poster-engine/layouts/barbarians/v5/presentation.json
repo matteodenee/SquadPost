@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v5-presentation-instagram",
+  "kind": "presentation",
+  "canvas": { "width": 1080, "height": 1350 },
+  "playerSlots": [],
+  "imageSlots": [
+    {
+      "key": "homeLogo",
+      "box": { "x": 177, "y": 700, "width": 270, "height": 190 },
+      "fit": "contain"
+    },
+    {
+      "key": "awayLogo",
+      "box": { "x": 634, "y": 700, "width": 270, "height": 190 },
+      "fit": "contain"
+    }
+  ],
+  "fieldSlots": [
+    {
+      "key": "roundLabel",
+      "box": { "x": 314, "y": 575, "width": 453, "height": 70 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 40,
+        "minFontSize": 24,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#ffffff",
+        "horizontalPadding": 24
+      }
+    },
+    {
+      "key": "homeTeam",
+      "box": { "x": 169, "y": 892, "width": 286, "height": 45 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 24,
+        "minFontSize": 14,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#062750",
+        "horizontalPadding": 14
+      }
+    },
+    {
+      "key": "awayTeam",
+      "box": { "x": 625, "y": 892, "width": 286, "height": 45 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 24,
+        "minFontSize": 14,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#ffffff",
+        "backgroundColor": "#062750",
+        "horizontalPadding": 14
+      }
+    },
+    {
+      "key": "matchDate",
+      "box": { "x": 290, "y": 981, "width": 500, "height": 60 },
+      "style": {
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 36,
+        "minFontSize": 22,
+        "fontWeight": 900,
+        "fontStyle": "italic",
+        "color": "#06305f",
+        "backgroundColor": "#ffffff",
+        "horizontalPadding": 22
+      }
+    }
+  ],
+  "layerOrder": ["images", "fields"],
+  "fixedArtwork": [
+    "Fond V5 natif 1080x1350 et vierge dans toutes les zones variables; aucun redimensionnement ni panneau de nettoyage."
+  ]
+}

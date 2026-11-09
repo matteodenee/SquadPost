@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v5-titulaires-instagram",
+  "kind": "starters",
+  "canvas": { "width": 1080, "height": 1350 },
+  "playerCollection": "starters",
+  "requiredPlayerCount": 10,
+  "layerOrder": ["photos", "protections", "numbers", "names"],
+  "protectedRegions": [
+    { "id": "badge-01", "box": { "x": 146, "y": 389, "width": 80, "height": 50 } },
+    { "id": "badge-02", "box": { "x": 429, "y": 389, "width": 79, "height": 50 } },
+    { "id": "badge-03", "box": { "x": 712, "y": 389, "width": 79, "height": 50 } },
+    { "id": "badge-04", "box": { "x": 266, "y": 595, "width": 79, "height": 48 } },
+    { "id": "badge-05", "box": { "x": 582, "y": 595, "width": 79, "height": 48 } },
+    { "id": "badge-09", "box": { "x": 134, "y": 795, "width": 81, "height": 48 } },
+    { "id": "badge-10", "box": { "x": 430, "y": 795, "width": 80, "height": 48 } },
+    { "id": "badge-12", "box": { "x": 719, "y": 795, "width": 81, "height": 48 } },
+    { "id": "badge-13", "box": { "x": 255, "y": 991, "width": 81, "height": 49 } },
+    { "id": "badge-14", "box": { "x": 585, "y": 991, "width": 80, "height": 49 } }
+  ],
+  "playerSlots": [
+    {
+      "id": "starter-01",
+      "order": 0,
+      "fixedDisplayNumber": 1,
+      "sportPositionHint": "pilier-gauche",
+      "photo": {
+        "x": 164,
+        "y": 400,
+        "width": 197,
+        "height": 134,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 19,
+          "cutouts": [{ "x": 0, "y": 0, "width": 62, "height": 39 }]
+        }
+      },
+      "number": {
+        "box": { "x": 146, "y": 389, "width": 80, "height": 50 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 29
+      },
+      "name": {
+        "x": 132,
+        "y": 535,
+        "width": 257,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-02",
+      "order": 1,
+      "fixedDisplayNumber": 2,
+      "sportPositionHint": "talonneur",
+      "photo": {
+        "x": 447,
+        "y": 400,
+        "width": 193,
+        "height": 134,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 19,
+          "cutouts": [{ "x": 0, "y": 0, "width": 61, "height": 39 }]
+        }
+      },
+      "number": {
+        "box": { "x": 429, "y": 389, "width": 79, "height": 50 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 29
+      },
+      "name": {
+        "x": 414,
+        "y": 535,
+        "width": 256,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-03",
+      "order": 2,
+      "fixedDisplayNumber": 3,
+      "sportPositionHint": "pilier-droit",
+      "photo": {
+        "x": 730,
+        "y": 400,
+        "width": 194,
+        "height": 134,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 19,
+          "cutouts": [{ "x": 0, "y": 0, "width": 61, "height": 39 }]
+        }
+      },
+      "number": {
+        "box": { "x": 712, "y": 389, "width": 79, "height": 50 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 29
+      },
+      "name": {
+        "x": 697,
+        "y": 535,
+        "width": 255,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-04",
+      "order": 3,
+      "fixedDisplayNumber": 4,
+      "sportPositionHint": "deuxieme-ligne-gauche",
+      "photo": {
+        "x": 283,
+        "y": 605,
+        "width": 193,
+        "height": 127,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 62, "height": 38 }]
+        }
+      },
+      "number": {
+        "box": { "x": 266, "y": 595, "width": 79, "height": 48 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 28
+      },
+      "name": {
+        "x": 252,
+        "y": 732,
+        "width": 259,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-05",
+      "order": 4,
+      "fixedDisplayNumber": 5,
+      "sportPositionHint": "deuxieme-ligne-droit",
+      "photo": {
+        "x": 600,
+        "y": 605,
+        "width": 192,
+        "height": 127,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 61, "height": 38 }]
+        }
+      },
+      "number": {
+        "box": { "x": 582, "y": 595, "width": 79, "height": 48 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 28
+      },
+      "name": {
+        "x": 568,
+        "y": 732,
+        "width": 259,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-09",
+      "order": 5,
+      "fixedDisplayNumber": 9,
+      "sportPositionHint": "demi-de-melee",
+      "photo": {
+        "x": 151,
+        "y": 806,
+        "width": 202,
+        "height": 124,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 64, "height": 37 }]
+        }
+      },
+      "number": {
+        "box": { "x": 134, "y": 795, "width": 81, "height": 48 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 28
+      },
+      "name": {
+        "x": 123,
+        "y": 930,
+        "width": 260,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-10",
+      "order": 6,
+      "fixedDisplayNumber": 10,
+      "sportPositionHint": "demi-ouverture",
+      "photo": {
+        "x": 447,
+        "y": 806,
+        "width": 193,
+        "height": 124,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 63, "height": 37 }]
+        }
+      },
+      "number": {
+        "box": { "x": 430, "y": 795, "width": 80, "height": 48 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 26
+      },
+      "name": {
+        "x": 414,
+        "y": 930,
+        "width": 262,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-12",
+      "order": 7,
+      "fixedDisplayNumber": 12,
+      "sportPositionHint": "centre-gauche",
+      "photo": {
+        "x": 737,
+        "y": 806,
+        "width": 197,
+        "height": 124,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 63, "height": 37 }]
+        }
+      },
+      "number": {
+        "box": { "x": 719, "y": 795, "width": 81, "height": 48 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 26
+      },
+      "name": {
+        "x": 705,
+        "y": 930,
+        "width": 260,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-13",
+      "order": 8,
+      "fixedDisplayNumber": 13,
+      "sportPositionHint": "centre-droit",
+      "photo": {
+        "x": 274,
+        "y": 1003,
+        "width": 200,
+        "height": 124,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 62, "height": 37 }]
+        }
+      },
+      "number": {
+        "box": { "x": 255, "y": 991, "width": 81, "height": 49 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 26
+      },
+      "name": {
+        "x": 243,
+        "y": 1127,
+        "width": 266,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    },
+    {
+      "id": "starter-14",
+      "order": 9,
+      "fixedDisplayNumber": 14,
+      "sportPositionHint": "arriere",
+      "photo": {
+        "x": 604,
+        "y": 1003,
+        "width": 195,
+        "height": 124,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 18,
+          "cutouts": [{ "x": 0, "y": 0, "width": 61, "height": 37 }]
+        }
+      },
+      "number": {
+        "box": { "x": 585, "y": 991, "width": 80, "height": 49 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 26
+      },
+      "name": {
+        "x": 571,
+        "y": 1127,
+        "width": 262,
+        "height": 45,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 21,
+          "minFontSize": 12,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 22
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Fond V5 natif 1080x1350. Les badges sont extraits du fond puis replacés au-dessus des portraits; seuls les chiffres et noms sont ajoutés."
+  ]
+}

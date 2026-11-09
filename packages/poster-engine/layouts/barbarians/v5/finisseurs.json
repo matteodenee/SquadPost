@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "id": "barbarians-v5-finisseurs-instagram",
+  "kind": "finishers",
+  "canvas": { "width": 1080, "height": 1350 },
+  "playerCollection": "finishers",
+  "requiredPlayerCount": 5,
+  "layerOrder": ["photos", "protections", "numbers", "names"],
+  "protectedRegions": [
+    { "id": "badge-16", "box": { "x": 59, "y": 467, "width": 112, "height": 69 } },
+    { "id": "badge-17", "box": { "x": 397, "y": 467, "width": 112, "height": 69 } },
+    { "id": "badge-18", "box": { "x": 725, "y": 467, "width": 112, "height": 69 } },
+    { "id": "badge-19", "box": { "x": 186, "y": 797, "width": 115, "height": 68 } },
+    { "id": "badge-20", "box": { "x": 564, "y": 797, "width": 115, "height": 68 } }
+  ],
+  "playerSlots": [
+    {
+      "id": "finisher-16",
+      "order": 0,
+      "fixedDisplayNumber": 16,
+      "photo": {
+        "x": 83,
+        "y": 490,
+        "width": 264,
+        "height": 203,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 25,
+          "cutouts": [{ "x": 0, "y": 0, "width": 88, "height": 46 }]
+        }
+      },
+      "number": {
+        "box": { "x": 59, "y": 467, "width": 112, "height": 69 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 47,
+        "y": 694,
+        "width": 330,
+        "height": 66,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 28
+        }
+      }
+    },
+    {
+      "id": "finisher-17",
+      "order": 1,
+      "fixedDisplayNumber": 17,
+      "photo": {
+        "x": 421,
+        "y": 490,
+        "width": 261,
+        "height": 203,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 25,
+          "cutouts": [{ "x": 0, "y": 0, "width": 88, "height": 46 }]
+        }
+      },
+      "number": {
+        "box": { "x": 397, "y": 467, "width": 112, "height": 69 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 384,
+        "y": 694,
+        "width": 326,
+        "height": 66,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 28
+        }
+      }
+    },
+    {
+      "id": "finisher-18",
+      "order": 2,
+      "fixedDisplayNumber": 18,
+      "photo": {
+        "x": 749,
+        "y": 490,
+        "width": 258,
+        "height": 203,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 25,
+          "cutouts": [{ "x": 0, "y": 0, "width": 88, "height": 46 }]
+        }
+      },
+      "number": {
+        "box": { "x": 725, "y": 467, "width": 112, "height": 69 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 711,
+        "y": 694,
+        "width": 328,
+        "height": 66,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 28,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 28
+        }
+      }
+    },
+    {
+      "id": "finisher-19",
+      "order": 3,
+      "fixedDisplayNumber": 19,
+      "photo": {
+        "x": 211,
+        "y": 821,
+        "width": 285,
+        "height": 205,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 25,
+          "cutouts": [{ "x": 0, "y": 0, "width": 90, "height": 44 }]
+        }
+      },
+      "number": {
+        "box": { "x": 186, "y": 797, "width": 115, "height": 68 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 173,
+        "y": 1027,
+        "width": 355,
+        "height": 67,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 29,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 29
+        }
+      }
+    },
+    {
+      "id": "finisher-20",
+      "order": 4,
+      "fixedDisplayNumber": 20,
+      "photo": {
+        "x": 589,
+        "y": 821,
+        "width": 287,
+        "height": 205,
+        "cropDefaults": { "focalPoint": { "x": 0.5, "y": 0.42 }, "zoom": 1 },
+        "mask": {
+          "mode": "rounded-rectangle",
+          "cornerRadius": 25,
+          "cutouts": [{ "x": 0, "y": 0, "width": 90, "height": 44 }]
+        }
+      },
+      "number": {
+        "box": { "x": 564, "y": 797, "width": 115, "height": 68 },
+        "renderMode": "text-only",
+        "color": "#ffffff",
+        "fontFamily": "DejaVu Sans",
+        "fontSize": 39
+      },
+      "name": {
+        "x": 556,
+        "y": 1027,
+        "width": 355,
+        "height": 67,
+        "renderMode": "text-only",
+        "style": {
+          "fontFamily": "DejaVu Sans",
+          "fontSize": 29,
+          "minFontSize": 14,
+          "fontWeight": 900,
+          "fontStyle": "italic",
+          "color": "#062958",
+          "backgroundColor": "#ffffff",
+          "horizontalPadding": 29
+        }
+      }
+    }
+  ],
+  "fieldSlots": [],
+  "fixedArtwork": [
+    "Fond V5 natif 1080x1350. Les cinq badges d'origine sont protégés au-dessus des portraits."
+  ]
+}
