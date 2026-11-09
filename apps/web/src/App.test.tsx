@@ -91,19 +91,27 @@ describe('App', () => {
       COM_MANAGER: ['dashboard:access', 'players:manage'],
       ADMIN: ['dashboard:access', 'users:assign-role'],
     };
-    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
-      new Response(
-        JSON.stringify({
-          user: {
-            id: 'user-1',
-            email: 'test@squadpost.local',
-            role,
-            permissions: permissionsByRole[role],
-          },
+    vi.spyOn(globalThis, 'fetch').mockImplementation((input) => {
+      const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+      const body = url.startsWith('/api/admin/users')
+        ? { users: [] }
+        : {
+            user: {
+              id: 'user-1',
+              email: 'test@squadpost.local',
+              firstName: null,
+              lastName: null,
+              role,
+              permissions: permissionsByRole[role],
+            },
+          };
+      return Promise.resolve(
+        new Response(JSON.stringify(body), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
         }),
-        { status: 200, headers: { 'Content-Type': 'application/json' } },
-      ),
-    );
+      );
+    });
 
     render(<App />);
 

@@ -10,7 +10,7 @@
     "seed:dev": "tsx scripts/seed-development.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
     "test": "vitest run --exclude test/**/*.e2e.spec.ts",
-    "test:integration": "vitest run test/health.e2e.spec.ts"
+    "test:integration": "vitest run test"
   },
   "dependencies": {
     "@nestjs/common": "12.4.0",

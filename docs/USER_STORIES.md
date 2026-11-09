@@ -11,9 +11,10 @@
 
 ## US-01 bis — Administrer les comptes
 **En tant qu'** administrateur global, **je veux** gérer les comptes SquadPost et leurs rôles.
-- `ADMIN` peut à terme consulter, créer, modifier, désactiver ou supprimer un compte.
-- `ADMIN` peut attribuer `PLAYER`, `COM_MANAGER` et, si autorisé, `ADMIN`.
-- Ces fonctions d'administration sont préparées dans les permissions mais ne sont pas encore développées.
+- `ADMIN` peut rechercher, consulter, créer et modifier un compte, puis le désactiver ou le réactiver.
+- `ADMIN` peut attribuer `PLAYER` ou `COM_MANAGER`. La promotion `ADMIN` passe par une action séparée avec confirmation explicite.
+- Un administrateur ne peut pas modifier son propre rôle, ni désactiver ou rétrograder le dernier administrateur actif.
+- La désactivation invalide toutes les sessions du compte et toutes les routes sont protégées côté serveur contre `PLAYER` et `COM_MANAGER`.
 
 ## US-02 — Alimenter l'effectif
 **En tant que** responsable communication, **je veux** créer un joueur rapidement et compléter ensuite son profil.

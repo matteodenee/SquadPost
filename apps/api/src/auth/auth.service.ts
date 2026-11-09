@@ -39,7 +39,7 @@ export class AuthService {
       user?.passwordHash ?? (await DUMMY_PASSWORD_HASH),
     );
 
-    if (!user || !passwordMatches) {
+    if (!user || user.disabledAt || !passwordMatches) {
       throw new UnauthorizedException('E-mail ou mot de passe incorrect.');
     }
 
@@ -83,9 +83,11 @@ export class AuthService {
       },
     });
 
-    if (!session || session.expiresAt <= new Date()) {
+    if (!session || session.expiresAt <= new Date() || session.user.disabledAt) {
       if (session) await this.prisma.session.delete({ where: { id: session.id } });
-      throw new UnauthorizedException('Session expirée ou invalide.');
+      throw new UnauthorizedException(
+        session?.user.disabledAt ? 'Ce compte est désactivé.' : 'Session expirée ou invalide.',
+      );
     }
 
     return this.toAuthenticatedUser(session.user);
@@ -137,6 +139,8 @@ export class AuthService {
   private async createSession(user: {
     id: string;
     email: string;
+    firstName: string | null;
+    lastName: string | null;
     role: AuthenticatedUser['role'];
   }): Promise<AuthenticationResult> {
     const token = randomBytes(32).toString('base64url');
@@ -162,11 +166,15 @@ export class AuthService {
   private toAuthenticatedUser(user: {
     id: string;
     email: string;
+    firstName: string | null;
+    lastName: string | null;
     role: AuthenticatedUser['role'];
   }): AuthenticatedUser {
     return {
       id: user.id,
       email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
       role: user.role,
       permissions: permissionsForRole(user.role),
     };

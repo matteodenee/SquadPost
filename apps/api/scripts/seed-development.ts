@@ -17,9 +17,24 @@ const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString }) })
 const demoPassword = 'SquadPost-demo-2026!';
 
 const accounts = [
-  { email: 'player@squadpost.local', role: UserRole.PLAYER },
-  { email: 'communication@squadpost.local', role: UserRole.COM_MANAGER },
-  { email: 'admin@squadpost.local', role: UserRole.ADMIN },
+  {
+    email: 'player@squadpost.local',
+    firstName: 'Camille',
+    lastName: 'Joueur',
+    role: UserRole.PLAYER,
+  },
+  {
+    email: 'communication@squadpost.local',
+    firstName: 'Morgan',
+    lastName: 'Communication',
+    role: UserRole.COM_MANAGER,
+  },
+  {
+    email: 'admin@squadpost.local',
+    firstName: 'Alex',
+    lastName: 'Admin',
+    role: UserRole.ADMIN,
+  },
 ];
 
 async function seed() {
@@ -29,8 +44,14 @@ async function seed() {
     const passwordHash = await hashPassword(demoPassword);
     await prisma.user.upsert({
       where: { email: account.email },
-      update: { passwordHash, role: account.role },
-      create: { email: account.email, passwordHash, role: account.role },
+      update: {
+        passwordHash,
+        firstName: account.firstName,
+        lastName: account.lastName,
+        role: account.role,
+        disabledAt: null,
+      },
+      create: { ...account, passwordHash },
     });
   }
 }

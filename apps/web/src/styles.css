@@ -22,7 +22,8 @@ body {
   min-height: 100vh;
 }
 button,
-input {
+input,
+select {
   font: inherit;
 }
 button {
@@ -153,7 +154,8 @@ label {
   font-weight: 700;
 }
 
-input {
+input,
+select {
   width: 100%;
   border: 1px solid #303643;
   border-radius: 0.8rem;
@@ -161,11 +163,13 @@ input {
   color: #f7f8fb;
   background: #0d1119;
 }
-input {
+input,
+select {
   min-height: 3.25rem;
   padding: 0.8rem 0.95rem;
 }
-input:focus {
+input:focus,
+select:focus {
   border-color: #d0365a;
   box-shadow: 0 0 0 3px rgb(208 54 90 / 15%);
 }
@@ -203,6 +207,14 @@ input:focus {
   padding: 0.65rem 0.8rem;
   color: #ffb5c6;
   background: rgb(239 71 111 / 8%);
+  font-size: 0.88rem;
+}
+.form-success {
+  margin: 1rem 0 0;
+  border-left: 3px solid #42c77a;
+  padding: 0.65rem 0.8rem;
+  color: #b9f7d1;
+  background: rgb(66 199 122 / 8%);
   font-size: 0.88rem;
 }
 
@@ -317,12 +329,167 @@ input:focus {
   margin-top: 2.5rem;
 }
 
+.admin-users {
+  margin-top: 1rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 1.2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: rgb(18 22 31 / 88%);
+}
+.admin-users__header,
+.user-editor__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.admin-users h3,
+.admin-users h4 {
+  margin: 0.35rem 0 0;
+}
+.admin-users h3 {
+  font-size: 1.7rem;
+}
+.admin-form {
+  display: grid;
+  gap: 1rem;
+}
+.admin-form--create {
+  margin-top: 1.5rem;
+  border: 1px solid #303643;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #0d1119;
+}
+.user-search {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.users-table-wrap {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+  border: 1px solid #2b303b;
+  border-radius: 0.9rem;
+}
+.users-table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+.users-table th,
+.users-table td {
+  border-bottom: 1px solid #282d37;
+  padding: 0.85rem 1rem;
+}
+.users-table th {
+  color: #8e96a3;
+  background: #0d1119;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.users-table td:first-child {
+  display: grid;
+  gap: 0.2rem;
+}
+.users-table td:first-child span {
+  color: #939aa6;
+  font-size: 0.8rem;
+}
+.users-table .role-badge {
+  margin-top: 0;
+}
+.users-table tr:last-child td {
+  border-bottom: 0;
+}
+.users-table tr.is-disabled {
+  opacity: 0.62;
+}
+.status-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+.status-pill--active {
+  color: #b9f7d1;
+  background: rgb(66 199 122 / 14%);
+}
+.status-pill--disabled {
+  color: #ffc0ce;
+  background: rgb(239 71 111 / 13%);
+}
+.table-action {
+  border: 0;
+  padding: 0.35rem;
+  color: #e5a6b5;
+  background: transparent;
+  font-weight: 800;
+}
+.table-action:hover {
+  color: #fff;
+}
+.empty-state {
+  margin: 0;
+  padding: 2rem;
+  color: #9299a5;
+  text-align: center;
+}
+.user-editor {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  border: 1px solid #3a404c;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #0d1119;
+}
+.user-editor__actions {
+  display: grid;
+  gap: 0.75rem;
+  border-top: 1px solid #292e38;
+  padding-top: 1.25rem;
+}
+.button--danger {
+  background: #8d1832;
+}
+.button--sensitive {
+  border: 1px solid #9a7631;
+  color: #ffe9b6;
+  background: rgb(154 118 49 / 15%);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 @media (min-width: 58rem) {
   .auth-shell {
     grid-template-columns: minmax(0, 1fr) minmax(24rem, 29rem);
   }
   .dashboard-grid {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+  .admin-form--create {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .admin-form--create h4,
+  .admin-form--create .button {
+    grid-column: 1 / -1;
+  }
+  .user-editor .admin-form,
+  .user-editor__actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
   }
 }
 
@@ -344,5 +511,13 @@ input:focus {
   .welcome-row {
     align-items: stretch;
     flex-direction: column;
+  }
+  .admin-users__header,
+  .user-editor__heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .user-search {
+    grid-template-columns: 1fr;
   }
 }

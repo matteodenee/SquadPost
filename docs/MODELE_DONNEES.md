@@ -4,7 +4,7 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 
 | Entité | Champs essentiels | Relations / contraintes |
 |---|---|---|
-| `User` | id, email unique, passwordHash, role (`PLAYER`, `COM_MANAGER`, `ADMIN`), createdAt | Rôle global unique ; plusieurs adhésions clubs possibles |
+| `User` | id, email unique, passwordHash, firstName?, lastName?, role (`PLAYER`, `COM_MANAGER`, `ADMIN`), disabledAt?, createdAt | Rôle global unique ; plusieurs adhésions clubs possibles ; un compte désactivé ne peut conserver aucune session |
 | `Club` | id, name, shortName, logoAssetId, primaryColor, secondaryColor, primarySportId | Propriétaire de toutes les données de club |
 | `ClubMembership` | userId, clubId, status | Unique par user + club ; aucun rôle porté par l'adhésion ; invitation possible |
 | `Invitation` | clubId, email, tokenHash, expiresAt, acceptedAt | Invitations sécurisées et expirables |

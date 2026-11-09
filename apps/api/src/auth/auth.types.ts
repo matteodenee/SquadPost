@@ -4,6 +4,8 @@ import type { UserPermission } from './user-permissions.js';
 export interface AuthenticatedUser {
   id: string;
   email: string;
+  firstName: string | null;
+  lastName: string | null;
   role: UserRole;
   permissions: readonly UserPermission[];
 }

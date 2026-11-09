@@ -17,6 +17,8 @@ describe('UserRoleGuard', () => {
   const user: AuthenticatedUser = {
     id: 'user-1',
     email: 'communication@squadpost.local',
+    firstName: null,
+    lastName: null,
     role: UserRole.COM_MANAGER,
     permissions: [],
   };

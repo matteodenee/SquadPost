@@ -11,6 +11,8 @@ function createPrismaMock() {
     },
     session: {
       create: vi.fn().mockResolvedValue({}),
+      findUnique: vi.fn(),
+      delete: vi.fn(),
     },
   };
 }
@@ -23,6 +25,8 @@ describe('AuthService.register', () => {
       Promise.resolve({
         id: 'user-1',
         email: data.email,
+        firstName: null,
+        lastName: null,
         passwordHash: data.passwordHash,
         role: data.role,
       }),
@@ -70,5 +74,27 @@ describe('AuthService.register', () => {
     await expect(
       service.register({ email: 'nouveau@squadpost.local', password: 'court' }),
     ).rejects.toThrow('Le mot de passe doit contenir entre 12 et 128 caractères.');
+  });
+
+  it('refuse une session appartenant à un compte désactivé', async () => {
+    const prisma = createPrismaMock();
+    prisma.session.findUnique.mockResolvedValue({
+      id: 'session-1',
+      expiresAt: new Date(Date.now() + 60_000),
+      user: {
+        id: 'user-1',
+        email: 'disabled@squadpost.local',
+        firstName: null,
+        lastName: null,
+        role: UserRole.PLAYER,
+        disabledAt: new Date(),
+      },
+    });
+    const service = new AuthService(prisma as unknown as PrismaService);
+
+    await expect(service.authenticate('disabled-token')).rejects.toThrow(
+      'Ce compte est désactivé.',
+    );
+    expect(prisma.session.delete).toHaveBeenCalledWith({ where: { id: 'session-1' } });
   });
 });

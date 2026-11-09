@@ -1,10 +1,13 @@
 import { FormEvent, useEffect, useState } from 'react';
+import { AdminUsersPanel } from './AdminUsersPanel';
 
 type UserRole = 'PLAYER' | 'COM_MANAGER' | 'ADMIN';
 
 interface AuthenticatedUser {
   id: string;
   email: string;
+  firstName: string | null;
+  lastName: string | null;
   role: UserRole;
   permissions: string[];
 }
@@ -181,6 +184,8 @@ export function App() {
               </ul>
             </article>
           </div>
+
+          {user.role === 'ADMIN' && <AdminUsersPanel currentUserId={user.id} />}
         </section>
       </main>
     );
