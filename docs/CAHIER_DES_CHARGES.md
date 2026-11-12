@@ -8,23 +8,25 @@ Application web de communication pour clubs sportifs amateurs/universitaires, d'
 
 ### Comptes / clubs
 - Inscription ouverte par e-mail et mot de passe. Toute inscription publique crée obligatoirement un compte `PLAYER` ; seuls les administrateurs pourront ensuite attribuer un autre rôle.
-- Après inscription : créer un club ou rejoindre via invitation.
+- Après inscription : un `PLAYER` rejoint un club via une invitation liée à son e-mail ; un `COM_MANAGER` peut créer un club et inviter ses membres.
 - Un compte peut être membre de plusieurs clubs, avec changement de contexte.
 - Espaces clubs isolés (joueurs, médias, compétitions, modèles, matchs).
 - Trois rôles globaux, directement associés au compte utilisateur et contrôlés côté serveur :
-  - **`PLAYER`** : accès à son propre compte et à ses propres informations ; les fonctions liées à son profil joueur et à ses photos seront ajoutées ultérieurement ;
+  - **`PLAYER`** : accès à son propre compte et consultation de ses seules fiches joueur associées ; la modification de son profil et de ses photos sera ajoutée ultérieurement ;
   - **`COM_MANAGER`** : rôle principal d'utilisation de SquadPost, destiné progressivement à la gestion des joueurs, de l'effectif, des matchs, des compositions, des visuels et des publications ;
   - **`ADMIN`** : administrateur global de SquadPost, destiné à la gestion des comptes et à l'attribution des rôles `PLAYER`, `COM_MANAGER` et éventuellement `ADMIN`.
 - Le rôle ne dépend pas du club. Une adhésion à un club n'attribue aucun rôle différent et il n'existe pas de rôle « propriétaire ».
 - Création club : nom, nom court, logo, couleur principale, secondaire, sport principal.
 
 ### Effectif et photos
+- Premier jalon livré : le `COM_MANAGER` membre actif gère les fiches de son club actif (recherche, création, consultation, modification, désactivation/réactivation). `PLAYER` consulte ses seules fiches liées et `ADMIN` n'accède pas aux effectifs.
+- Une fiche joueur peut exister sans compte utilisateur. L'association facultative cible un compte `PLAYER` actif, membre du même club, et peut exister dans plusieurs clubs.
 - Création rapide joueur (nom/prénom) ou fiche complète, informations facultatives à compléter plus tard.
 - Champs : nom, prénom, surnom, poste principal, postes secondaires, numéro de maillot habituel facultatif, date de naissance, taille, poids, année d'arrivée, club d'origine. **Pas de nationalité** imposée.
 - Le numéro habituel peut être proposé lors de la préparation d'une composition, sans jamais conditionner la sélection du joueur ; il peut être absent et ne préjuge ni de l'emplacement sportif ni du numéro réellement porté pour un match.
 - Catégories de photos personnalisables par club (ex. sérieuse, drôle, enfant, scorer).
 - Une photo active par catégorie et joueur. Remplacer une photo **sans conserver un historique des versions**.
-- Import PNG/JPG, recadrage manuel dans l'app, import multiple, et import Excel/CSV de fiches joueurs partiellement remplies.
+- Le premier jalon importe une photo de composition PNG/JPG validée côté serveur et stockée dans sa forme originale, hors base de données, sans zoom, recadrage ni modification du visage ; PNG transparent recommandé. Le recadrage non destructif, l'import multiple et l'import Excel/CSV restent à développer.
 - En l'absence de photo de la catégorie sélectionnée, silhouette générique par défaut et possibilité de choisir manuellement une autre photo de ce joueur.
 - Archivage des joueurs (non-sélectionnables par défaut), sans casser les matchs historiques.
 - Détourage automatique NON exigé en V1 : à tester ultérieurement sans garantie de rendu parfait.

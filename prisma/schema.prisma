@@ -20,28 +20,47 @@ enum MembershipStatus {
 }
 
 model User {
-  id           String           @id @default(uuid()) @db.Uuid
-  email        String           @unique
-  passwordHash String
-  firstName    String?
-  lastName     String?
-  role         UserRole         @default(PLAYER)
-  disabledAt   DateTime?
-  createdAt    DateTime         @default(now())
-  updatedAt    DateTime         @updatedAt
-  memberships  ClubMembership[]
-  sessions     Session[]
+  id                 String           @id @default(uuid()) @db.Uuid
+  email              String           @unique
+  passwordHash       String
+  firstName          String?
+  lastName           String?
+  role               UserRole         @default(PLAYER)
+  disabledAt         DateTime?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+  memberships        ClubMembership[]
+  sessions           Session[]
+  invitationsCreated ClubInvitation[] @relation("InvitationCreator")
+  playerProfiles     ClubPlayer[]
 
   @@index([disabledAt])
 }
 
 model Club {
-  id          String           @id @default(uuid()) @db.Uuid
-  name        String
-  shortName   String
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
-  memberships ClubMembership[]
+  id             String           @id @default(uuid()) @db.Uuid
+  name           String
+  shortName      String
+  primaryColor   String
+  secondaryColor String
+  primarySportId String           @db.Uuid
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  primarySport   Sport            @relation(fields: [primarySportId], references: [id], onDelete: Restrict)
+  memberships    ClubMembership[]
+  invitations    ClubInvitation[]
+  players        ClubPlayer[]
+  mediaAssets    MediaAsset[]
+
+  @@index([primarySportId])
+}
+
+model Sport {
+  id        String   @id @default(uuid()) @db.Uuid
+  code      String   @unique
+  name      String
+  createdAt DateTime @default(now())
+  clubs     Club[]
 }
 
 model ClubMembership {
@@ -68,4 +87,57 @@ model Session {
 
   @@index([userId])
   @@index([expiresAt])
+}
+
+model ClubInvitation {
+  id          String    @id @default(uuid()) @db.Uuid
+  clubId      String    @db.Uuid
+  email       String
+  tokenHash   String    @unique
+  expiresAt   DateTime
+  acceptedAt  DateTime?
+  invitedById String    @db.Uuid
+  createdAt   DateTime  @default(now())
+  club        Club      @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  invitedBy   User      @relation("InvitationCreator", fields: [invitedById], references: [id], onDelete: Restrict)
+
+  @@index([clubId, email])
+  @@index([expiresAt])
+}
+
+model ClubPlayer {
+  id                 String      @id @default(uuid()) @db.Uuid
+  clubId             String      @db.Uuid
+  userId             String?     @db.Uuid
+  firstName          String
+  lastName           String
+  primaryPosition    String?
+  usualJerseyNumber  Int?
+  compositionPhotoId String?     @unique @db.Uuid
+  inactiveAt         DateTime?
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  club               Club        @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  user               User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  compositionPhoto   MediaAsset? @relation(fields: [compositionPhotoId], references: [id], onDelete: SetNull)
+
+  @@unique([clubId, userId])
+  @@index([clubId, inactiveAt])
+  @@index([userId])
+}
+
+model MediaAsset {
+  id          String      @id @default(uuid()) @db.Uuid
+  clubId      String      @db.Uuid
+  storageKey  String      @unique
+  mimeType    String
+  sizeBytes   Int
+  width       Int
+  height      Int
+  hasAlpha    Boolean
+  createdAt   DateTime    @default(now())
+  club        Club        @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  playerPhoto ClubPlayer?
+
+  @@index([clubId])
 }

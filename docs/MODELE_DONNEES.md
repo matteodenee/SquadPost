@@ -8,11 +8,11 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 | `Club` | id, name, shortName, logoAssetId, primaryColor, secondaryColor, primarySportId | Propriétaire de toutes les données de club |
 | `ClubMembership` | userId, clubId, status | Unique par user + club ; aucun rôle porté par l'adhésion ; invitation possible |
 | `Invitation` | clubId, email, tokenHash, expiresAt, acceptedAt | Invitations sécurisées et expirables |
-| `Player` | id, clubId, name, firstName, nickname, usualJerseyNumber?, birthDate?, size?, weight?, joinYear?, originClub?, archivedAt? | Référence stable conservée après archivage ; numéro habituel facultatif et non contraignant |
+| `ClubPlayer` | id, clubId, userId?, firstName, lastName, primaryPosition?, usualJerseyNumber?, compositionPhotoId?, inactiveAt?, createdAt, updatedAt | Fiche sportive propre à un club ; compte `PLAYER` facultatif ; un même compte peut être lié dans plusieurs clubs ; numéro facultatif et non unique |
 | `PlayerPosition` | playerId, sportPositionId, isPrimary | 1 principale et n secondaires |
 | `PhotoCategory` | id, clubId, name, code | Catégories libres par club |
 | `PlayerPhoto` | id, playerId, photoCategoryId, assetId, cropData | Une active par (player, category), pas d'historique |
-| `MediaAsset` | id, clubId, path, mime, width, height, hash?, uploadedAt | Stockage sécurisé, contrôle du remplacement |
+| `MediaAsset` | id, clubId, storageKey, mimeType, sizeBytes, width, height, hasAlpha, createdAt | Fichier original hors base de données, dans un stockage persistant isolé par club ; aucune image en base64 |
 | `Sport` | id, name, code | Rugby préchargé |
 | `SportFormat` | id, sportId, name, starterCount, finisherCount | Rugby 7/10/15 préchargés, nombres éditables |
 | `SportPosition` | id, sportFormatId, name, number? | Facultatif/configurable |
@@ -35,6 +35,9 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 ## Invariants
 
 - Le rôle est global au compte utilisateur. Aucun rôle « propriétaire » n'existe et une adhésion club ne peut pas surcharger le rôle du compte.
+- Une fiche `ClubPlayer` peut exister sans compte. Son association éventuelle cible uniquement un compte global `PLAYER` actif et membre du même club.
+- Dans le jalon actuel, seul un `COM_MANAGER` membre actif du club gère son effectif ; `PLAYER` consulte uniquement ses fiches associées et `ADMIN` n'accède pas aux données de club.
+- La photo de composition JPG/PNG est validée par décodage serveur puis conservée octet pour octet, sans zoom, recadrage ni transformation du visage. Un PNG transparent est recommandé.
 - Les identifiants de joueur, photo et modèle ne doivent jamais exposer les données d'un autre club via une requête non autorisée.
 - `LineupSlot.slotKey` est unique par composition et correspond à la définition figée du format au moment du match.
 - L'emplacement sportif, le statut titulaire/finisseur et le numéro de maillot sont indépendants. Le numéro habituel du joueur ne sert que de proposition initiale.

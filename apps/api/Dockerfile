@@ -24,6 +24,8 @@ COPY --from=build /workspace/apps/api/node_modules ./apps/api/node_modules
 COPY --from=build /workspace/apps/api/package.json ./apps/api/package.json
 COPY --from=build /workspace/apps/api/dist ./apps/api/dist
 
+RUN mkdir -p /data/media && chown node:node /data/media
+
 USER node
 EXPOSE 3000
 CMD ["node", "apps/api/dist/main.js"]

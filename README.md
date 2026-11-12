@@ -70,4 +70,6 @@ docker compose up --build
 
 L'application est alors exposée sur <http://localhost:8080>. Les données PostgreSQL et les futurs médias sont conservés dans des volumes Docker privés.
 
+Les photos de composition sont conservées dans le volume persistant `media_data`, jamais en base64 dans PostgreSQL. En local, `MEDIA_ROOT` choisit le répertoire de stockage et `PLAYER_PHOTO_MAX_BYTES` fixe la taille maximale d'un JPG/PNG (10 Mio par défaut). L'API valide le contenu réel de l'image et conserve le fichier original sans transformation.
+
 La documentation fonctionnelle complète se trouve dans [`docs/`](docs/README.md).

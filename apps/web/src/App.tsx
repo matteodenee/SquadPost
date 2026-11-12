@@ -1,5 +1,7 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useState } from 'react';
 import { AdminUsersPanel } from './AdminUsersPanel';
+import { ClubsPanel, type Club } from './ClubsPanel';
+import { MyPlayerProfilesPanel, PlayersPanel } from './PlayersPanel';
 
 type UserRole = 'PLAYER' | 'COM_MANAGER' | 'ADMIN';
 
@@ -67,6 +69,12 @@ export function App() {
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [activeClub, setActiveClub] = useState<Club | null>(null);
+  const [dashboardView, setDashboardView] = useState<'overview' | 'roster'>('overview');
+
+  const handleActiveClubChange = useCallback((club: Club | null) => {
+    setActiveClub(club);
+  }, []);
 
   useEffect(() => {
     void fetch('/api/auth/me', { credentials: 'include' })
@@ -120,6 +128,8 @@ export function App() {
   async function handleLogout() {
     await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
     setUser(null);
+    setActiveClub(null);
+    setDashboardView('overview');
     setStatus('guest');
   }
 
@@ -161,31 +171,51 @@ export function App() {
             </div>
           </div>
 
-          <div className="dashboard-grid">
-            <article className="panel role-panel">
-              <p className="panel-label">Mon compte</p>
-              <h3>{user.email}</h3>
-              <span className={`role-badge role-badge--${user.role.toLowerCase()}`}>
-                {ROLE_LABELS[user.role]}
-              </span>
-              <p>{ROLE_DESCRIPTIONS[user.role]}</p>
-            </article>
+          {dashboardView === 'overview' && (
+            <div className="dashboard-grid">
+              <article className="panel role-panel">
+                <p className="panel-label">Mon compte</p>
+                <h3>{user.email}</h3>
+                <span className={`role-badge role-badge--${user.role.toLowerCase()}`}>
+                  {ROLE_LABELS[user.role]}
+                </span>
+                <p>{ROLE_DESCRIPTIONS[user.role]}</p>
+              </article>
 
-            <article className="panel permissions-panel">
-              <p className="panel-label">Accès préparés</p>
-              <h3>Autorisations du rôle</h3>
-              <ul className="permission-list">
-                {user.permissions.map((permission) => (
-                  <li key={permission}>
-                    <span aria-hidden="true">✓</span>
-                    {PERMISSION_LABELS[permission] ?? permission}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </div>
+              <article className="panel permissions-panel">
+                <p className="panel-label">Accès préparés</p>
+                <h3>Autorisations du rôle</h3>
+                <ul className="permission-list">
+                  {user.permissions.map((permission) => (
+                    <li key={permission}>
+                      <span aria-hidden="true">✓</span>
+                      {PERMISSION_LABELS[permission] ?? permission}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </div>
+          )}
 
-          {user.role === 'ADMIN' && <AdminUsersPanel currentUserId={user.id} />}
+          {dashboardView === 'overview' && user.role === 'ADMIN' && (
+            <AdminUsersPanel currentUserId={user.id} />
+          )}
+          {dashboardView === 'overview' &&
+            (user.role === 'PLAYER' || user.role === 'COM_MANAGER') && (
+              <ClubsPanel
+                onActiveClubChange={handleActiveClubChange}
+                onOpenRoster={
+                  user.role === 'COM_MANAGER' && activeClub
+                    ? () => setDashboardView('roster')
+                    : undefined
+                }
+                role={user.role}
+              />
+            )}
+          {dashboardView === 'overview' && user.role === 'PLAYER' && <MyPlayerProfilesPanel />}
+          {dashboardView === 'roster' && user.role === 'COM_MANAGER' && activeClub && (
+            <PlayersPanel club={activeClub} onBack={() => setDashboardView('overview')} />
+          )}
         </section>
       </main>
     );

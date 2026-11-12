@@ -1,11 +1,12 @@
 # User stories et critères d'acceptation
 
 ## US-01 — Créer un club
-**En tant que** nouvel utilisateur, **je veux** m'inscrire puis créer mon club ou rejoindre un club via invitation, **afin de** gérer un espace de communication.
+**En tant que** nouvel utilisateur, **je veux** rejoindre un club via invitation et, si je suis `COM_MANAGER`, pouvoir créer un club, **afin de** gérer un espace de communication.
 - Email unique, mot de passe sécurisé.
 - Une inscription publique crée toujours un compte `PLAYER` et ouvre directement une session ; aucun rôle privilégié ne peut être choisi dans ce parcours.
 - Club créé avec nom, nom court, logo/couleurs, sport principal.
 - Une invitation vérifiée ouvre l'accès au club ; aucun accès transversal aux autres clubs.
+- Seul `COM_MANAGER` peut créer un club et émettre ses invitations. `PLAYER` rejoint uniquement un club correspondant à une invitation envoyée à son e-mail.
 - Le compte possède un rôle global unique : `PLAYER`, `COM_MANAGER` ou `ADMIN`. L'adhésion à un club ne modifie pas ce rôle.
 - Toutes les autorisations sont contrôlées côté serveur.
 
@@ -19,13 +20,17 @@
 ## US-02 — Alimenter l'effectif
 **En tant que** responsable communication, **je veux** créer un joueur rapidement et compléter ensuite son profil.
 - Seuls nom/prénom sont requis dans le flux rapide.
-- Un import CSV/Excel accepte des champs manquants et fournit un rapport d'erreurs sans annuler toute l'importation.
-- Un joueur peut avoir plusieurs postes.
+- Le premier jalon permet la recherche, la consultation, la création, la modification et la désactivation/réactivation dans le club actif.
+- Une fiche peut exister sans compte utilisateur ; l'association facultative se fait uniquement avec un compte `PLAYER` actif et membre du même club.
+- Le poste principal est facultatif dans le premier jalon. Les postes multiples et l'import CSV/Excel restent prévus pour une étape ultérieure.
 - Un numéro de maillot habituel facultatif peut être enregistré sans limiter la sélection ni le poste du joueur.
+- Les contrôles serveur interdisent à un `COM_MANAGER` d'accéder à l'effectif d'un club dont il n'est pas membre actif. `PLAYER` et `ADMIN` ne peuvent pas le modifier.
 
 ## US-03 — Photos et catégories
 **En tant que** responsable communication, **je veux** définir les catégories et choisir une photo par joueur/catégorie.
-- Création de catégorie libre, import et recadrage d'images.
+- Le premier jalon accepte une photo de composition JPG ou PNG par joueur, avec prévisualisation avant envoi et recommandation d'un PNG transparent.
+- Le serveur vérifie le contenu réel et la taille configurable, stocke le fichier original hors base de données et ne réalise ni zoom, ni recadrage, ni transformation du visage.
+- La création de catégories libres, l'import multiple et les informations de recadrage restent prévus pour une étape ultérieure ; l'original devra toujours être conservé.
 - Le remplacement de photo supprime l'ancienne version stockée lorsqu'elle n'est plus référencée.
 - Le profil ne propose pas d'historique de photos.
 
@@ -76,7 +81,7 @@
 - Affiche d'événement générable avec photo de catégorie par défaut modifiable.
 
 ## US-10 — Profil joueur
-**En tant que** joueur, **je veux** accéder à mon propre compte et, ultérieurement, à ma fiche existante sans perdre son historique.
-- `PLAYER` peut actuellement se connecter et consulter les informations de son propre compte.
+**En tant que** joueur, **je veux** accéder à mon propre compte et à mes fiches existantes sans pouvoir modifier l'effectif.
+- `PLAYER` peut se connecter, consulter les informations de son compte et ses seules fiches associées dans les clubs dont il est membre actif.
 - Invitation rattachée au bon joueur existant.
 - Les droits de modification du profil et des photos seront définis ultérieurement.

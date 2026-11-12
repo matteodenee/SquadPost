@@ -28,22 +28,39 @@ describe('App', () => {
   });
 
   it('inscrit un joueur puis affiche son profil', async () => {
-    const fetchMock = vi
-      .spyOn(globalThis, 'fetch')
-      .mockResolvedValueOnce(new Response(null, { status: 401 }))
-      .mockResolvedValueOnce(
-        new Response(
-          JSON.stringify({
-            user: {
-              id: 'player-1',
-              email: 'nouveau@squadpost.local',
-              role: 'PLAYER',
-              permissions: ['profile:read:self'],
-            },
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockImplementation((input) => {
+      const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+      if (url === '/api/auth/me') return Promise.resolve(new Response(null, { status: 401 }));
+      if (url === '/api/auth/register') {
+        return Promise.resolve(
+          new Response(
+            JSON.stringify({
+              user: {
+                id: 'player-1',
+                email: 'nouveau@squadpost.local',
+                role: 'PLAYER',
+                permissions: ['profile:read:self'],
+              },
+            }),
+            { status: 201, headers: { 'Content-Type': 'application/json' } },
+          ),
+        );
+      }
+      if (url === '/api/clubs') {
+        return Promise.resolve(
+          new Response(JSON.stringify({ clubs: [] }), {
+            status: 200,
+            headers: { 'Content-Type': 'application/json' },
           }),
-          { status: 201, headers: { 'Content-Type': 'application/json' } },
-        ),
+        );
+      }
+      return Promise.resolve(
+        new Response(JSON.stringify({ players: [] }), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        }),
       );
+    });
     render(<App />);
 
     fireEvent.click(await screen.findByRole('button', { name: 'Créer un compte' }));
@@ -59,8 +76,8 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Créer mon compte joueur' }));
 
     expect(await screen.findByRole('heading', { name: 'Mon profil' })).toBeInTheDocument();
-    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
-    expect(fetchMock).toHaveBeenLastCalledWith('/api/auth/register', {
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(4));
+    expect(fetchMock).toHaveBeenNthCalledWith(2, '/api/auth/register', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
@@ -95,16 +112,20 @@ describe('App', () => {
       const url = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
       const body = url.startsWith('/api/admin/users')
         ? { users: [] }
-        : {
-            user: {
-              id: 'user-1',
-              email: 'test@squadpost.local',
-              firstName: null,
-              lastName: null,
-              role,
-              permissions: permissionsByRole[role],
-            },
-          };
+        : url === '/api/me/player-profiles'
+          ? { players: [] }
+          : url === '/api/clubs'
+            ? { clubs: [] }
+            : {
+                user: {
+                  id: 'user-1',
+                  email: 'test@squadpost.local',
+                  firstName: null,
+                  lastName: null,
+                  role,
+                  permissions: permissionsByRole[role],
+                },
+              };
       return Promise.resolve(
         new Response(JSON.stringify(body), {
           status: 200,
