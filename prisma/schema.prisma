@@ -51,16 +51,67 @@ model Club {
   invitations    ClubInvitation[]
   players        ClubPlayer[]
   mediaAssets    MediaAsset[]
+  competitions   Competition[]
 
   @@index([primarySportId])
 }
 
 model Sport {
-  id        String   @id @default(uuid()) @db.Uuid
-  code      String   @unique
+  id        String        @id @default(uuid()) @db.Uuid
+  code      String        @unique
   name      String
-  createdAt DateTime @default(now())
+  createdAt DateTime      @default(now())
   clubs     Club[]
+  formats   SportFormat[]
+}
+
+model SportFormat {
+  id                   String        @id @default(uuid()) @db.Uuid
+  sportId              String        @db.Uuid
+  code                 String
+  name                 String
+  defaultStarterCount  Int
+  defaultFinisherCount Int
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+  sport                Sport         @relation(fields: [sportId], references: [id], onDelete: Cascade)
+  competitions         Competition[]
+
+  @@unique([sportId, code])
+  @@index([sportId])
+}
+
+model Competition {
+  id            String      @id @default(uuid()) @db.Uuid
+  clubId        String      @db.Uuid
+  sportFormatId String      @db.Uuid
+  name          String
+  starterCount  Int
+  finisherCount Int
+  inactiveAt    DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  club          Club        @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  sportFormat   SportFormat @relation(fields: [sportFormatId], references: [id], onDelete: Restrict)
+  seasons       Season[]
+
+  @@index([clubId, inactiveAt])
+  @@index([sportFormatId])
+}
+
+model Season {
+  id            String      @id @default(uuid()) @db.Uuid
+  competitionId String      @db.Uuid
+  label         String
+  startDate     DateTime?   @db.Date
+  endDate       DateTime?   @db.Date
+  inactiveAt    DateTime?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  competition   Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+
+  @@unique([competitionId, label])
+  @@index([competitionId, inactiveAt])
 }
 
 model ClubMembership {

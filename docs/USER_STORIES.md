@@ -36,7 +36,11 @@
 
 ## US-04 — Préparer un match
 **En tant que** responsable communication, **je veux** choisir une saison/compétition et créer un match.
-- Le format sélectionné fixe le nombre d'emplacements.
+- Une compétition appartient à un club, sélectionne un sport et une déclinaison, puis permet de régler ses nombres de titulaires et finisseurs à partir des valeurs proposées par le format.
+- Rugby 7/10/15 est préchargé ; le catalogue permet d'ajouter ultérieurement d'autres sports et déclinaisons sans changer la structure des compétitions.
+- Une compétition possède plusieurs saisons historisées, avec libellé obligatoire et dates facultatives cohérentes.
+- Seul un `COM_MANAGER` membre actif du club peut créer, modifier ou désactiver ses compétitions et saisons ; `PLAYER` et `ADMIN` n'y accèdent pas.
+- Le format et les nombres enregistrés sur la compétition fixeront le nombre d'emplacements des futurs matchs.
 - L'adversaire peut être choisi dans une base ou créé.
 - Terrain neutre/domicile/extérieur est facultatif.
 

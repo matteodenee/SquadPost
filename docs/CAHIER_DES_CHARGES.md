@@ -35,7 +35,9 @@ Application web de communication pour clubs sportifs amateurs/universitaires, d'
 - Initialiser le sport Rugby et les formats 7, 10, 15 (paramètres éditables), sans saisie manuelle initiale.
 - L'architecture distingue **sport**, **format**, **compétition**, **saison**, **match**.
 - Un format définit les nombres titulaires/remplaçants et les positions numérotées, avec postes facultatifs/configurables.
-- Une compétition fixe son format ; un match de cette compétition doit respecter la capacité prévue, sans surcharge ponctuelle.
+- Les déclinaisons sportives forment un catalogue extensible : Rugby 7/10/15 est préchargé, et d'autres sports pourront fournir leurs propres formats sans modifier le module de compétitions.
+- Une compétition fixe son sport et sa déclinaison, copie les nombres de titulaires/finisseurs proposés par ce format puis permet au responsable de les régler pour cette compétition. Une modification reste isolée des autres compétitions.
+- Une compétition et ses saisons peuvent être désactivées sans suppression de leur historique. Le libellé de saison est obligatoire ; ses dates sont facultatives et, lorsqu'elles sont toutes deux présentes, la fin ne peut précéder le début.
 - Compétitions/saisons historisées ; un même joueur peut participer à plusieurs compétitions.
 - Création match manuelle ou depuis calendrier de saison ; base d'adversaires avec nom, logo, couleurs.
 - Informations match : adversaire, compétition/saison, journée, date, heure, lieu, domicile/extérieur/neutre (facultatif), statut à venir/en cours/terminé.

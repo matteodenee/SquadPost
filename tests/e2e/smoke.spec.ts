@@ -122,6 +122,29 @@ test('affiche les clubs et les invitations dans le dashboard COM_MANAGER', async
       }),
     }),
   );
+  await page.route('**/api/sport-formats', async (route) =>
+    route.fulfill({
+      contentType: 'application/json',
+      body: JSON.stringify({
+        formats: [
+          {
+            id: '33333333-3333-4333-8333-333333333333',
+            code: 'RUGBY_10',
+            name: 'Rugby à 10',
+            defaultStarterCount: 10,
+            defaultFinisherCount: 5,
+            sport: { id: 'sport-id', code: 'RUGBY', name: 'Rugby' },
+          },
+        ],
+      }),
+    }),
+  );
+  await page.route(`**/api/clubs/${clubId}/competitions`, async (route) =>
+    route.fulfill({
+      contentType: 'application/json',
+      body: JSON.stringify({ competitions: [] }),
+    }),
+  );
 
   await page.goto('/');
 
@@ -135,4 +158,8 @@ test('affiche les clubs et les invitations dans le dashboard COM_MANAGER', async
     page.getByRole('heading', { name: 'Effectif de Barbarians Montpellier' }),
   ).toBeVisible();
   await expect(page.getByText('Lina Martin')).toBeVisible();
+  await page.getByRole('button', { name: 'Retour aux clubs' }).click();
+  await page.getByRole('button', { name: 'Compétitions et saisons' }).click();
+  await expect(page.getByRole('heading', { name: 'Compétitions et saisons' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Créer une compétition' })).toBeVisible();
 });

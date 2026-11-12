@@ -25,6 +25,7 @@ interface ClubsPanelProps {
   role: ClubUserRole;
   onActiveClubChange?: (club: Club | null) => void;
   onOpenRoster?: () => void;
+  onOpenCompetitions?: () => void;
 }
 
 async function readError(response: Response) {
@@ -38,7 +39,12 @@ async function readError(response: Response) {
   }
 }
 
-export function ClubsPanel({ role, onActiveClubChange, onOpenRoster }: ClubsPanelProps) {
+export function ClubsPanel({
+  role,
+  onActiveClubChange,
+  onOpenRoster,
+  onOpenCompetitions,
+}: ClubsPanelProps) {
   const [clubs, setClubs] = useState<Club[]>([]);
   const [selectedClubId, setSelectedClubId] = useState<string | null>(null);
   const [invitations, setInvitations] = useState<ClubInvitation[]>([]);
@@ -322,11 +328,18 @@ export function ClubsPanel({ role, onActiveClubChange, onOpenRoster }: ClubsPane
               <p className="panel-label">Club actif</p>
               <h4>{selectedClub.name}</h4>
             </div>
-            {onOpenRoster && (
-              <button className="button button--ghost" onClick={onOpenRoster} type="button">
-                Ouvrir l’effectif
-              </button>
-            )}
+            <div className="club-active-actions">
+              {onOpenRoster && (
+                <button className="button button--ghost" onClick={onOpenRoster} type="button">
+                  Ouvrir l’effectif
+                </button>
+              )}
+              {onOpenCompetitions && (
+                <button className="button button--ghost" onClick={onOpenCompetitions} type="button">
+                  Compétitions et saisons
+                </button>
+              )}
+            </div>
           </div>
           <form
             className="invitation-create"

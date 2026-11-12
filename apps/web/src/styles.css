@@ -491,6 +491,11 @@ select:focus {
   justify-content: space-between;
   gap: 1rem;
 }
+.club-active-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .clubs-panel h3,
 .clubs-panel h4 {
   margin: 0.35rem 0 0;
@@ -748,6 +753,99 @@ select:focus {
   font-size: 0.82rem;
 }
 
+.competitions-panel {
+  margin-top: 1rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 1.2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: rgb(18 22 31 / 88%);
+}
+.competitions-panel h3,
+.competitions-panel h4 {
+  margin: 0.35rem 0 0;
+}
+.competitions-panel h3 {
+  font-size: 1.7rem;
+}
+.competitions-panel__header,
+.competition-editor__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.competitions-panel__actions,
+.competition-list__actions,
+.season-list__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.competition-editor {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid #3a404c;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #0d1119;
+}
+.competition-form,
+.season-form {
+  display: grid;
+  gap: 1rem;
+}
+.seasons-editor {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid #292e38;
+  padding-top: 1.25rem;
+}
+.season-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.season-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #292e38;
+  padding: 0.85rem 0;
+}
+.season-list li > span:first-child {
+  display: grid;
+  gap: 0.2rem;
+}
+.season-list small {
+  color: #9299a5;
+}
+.season-list li.is-disabled,
+.competition-list article.is-disabled {
+  opacity: 0.62;
+}
+.competition-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.competition-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #303643;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background: #0d1119;
+}
+.competition-list article .muted {
+  margin: 0.5rem 0;
+}
+
 @media (min-width: 58rem) {
   .auth-shell {
     grid-template-columns: minmax(0, 1fr) minmax(24rem, 29rem);
@@ -794,6 +892,16 @@ select:focus {
   .my-player-profiles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .competition-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .competition-form .button {
+    grid-column: 1 / -1;
+  }
+  .season-form {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -824,6 +932,12 @@ select:focus {
     align-items: stretch;
     flex-direction: column;
   }
+  .competitions-panel__header,
+  .competition-editor__heading,
+  .competition-list article {
+    align-items: stretch;
+    flex-direction: column;
+  }
   .user-search {
     grid-template-columns: 1fr;
   }
@@ -832,5 +946,12 @@ select:focus {
   }
   .players-panel__actions {
     display: grid;
+  }
+  .competitions-panel__actions,
+  .club-active-actions {
+    display: grid;
+  }
+  .season-list li {
+    grid-template-columns: 1fr;
   }
 }

@@ -14,11 +14,11 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 | `PlayerPhoto` | id, playerId, photoCategoryId, assetId, cropData | Une active par (player, category), pas d'historique |
 | `MediaAsset` | id, clubId, storageKey, mimeType, sizeBytes, width, height, hasAlpha, createdAt | Fichier original hors base de données, dans un stockage persistant isolé par club ; aucune image en base64 |
 | `Sport` | id, name, code | Rugby préchargé |
-| `SportFormat` | id, sportId, name, starterCount, finisherCount | Rugby 7/10/15 préchargés, nombres éditables |
+| `SportFormat` | id, sportId, code, name, defaultStarterCount, defaultFinisherCount | Catalogue extensible de déclinaisons sportives ; Rugby 7/10/15 préchargés avec valeurs proposées |
 | `SportPosition` | id, sportFormatId, name, number? | Facultatif/configurable |
 | `SportEventType` | id, sportId, name, points, impactsScore, appliesToPlayer?, enabled | Utilisé V2 ; rugby préchargé |
-| `Competition` | id, clubId, sportFormatId, name | Plusieurs saisons |
-| `Season` | id, competitionId, label, startDate?, endDate? | Conservation historique |
+| `Competition` | id, clubId, sportFormatId, name, starterCount, finisherCount, inactiveAt? | Les nombres sont copiés depuis le format puis réglables par compétition ; plusieurs saisons |
+| `Season` | id, competitionId, label, startDate?, endDate?, inactiveAt? | Libellé unique par compétition ; dates facultatives ; conservation historique |
 | `Opponent` | id, clubId, name, shortName, logoAssetId?, colors? | Réutilisable entre matchs |
 | `Match` | id, clubId, seasonId, opponentId, round?, dateTime?, venue?, homeAwayNeutral?, status | Pas de surnombre hors format |
 | `Lineup` | id, matchId unique, status, updatedAt | Une composition par match ; statut modifié explicitement, jamais par un export |
@@ -38,6 +38,7 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 - Une fiche `ClubPlayer` peut exister sans compte. Son association éventuelle cible uniquement un compte global `PLAYER` actif et membre du même club.
 - Dans le jalon actuel, seul un `COM_MANAGER` membre actif du club gère son effectif ; `PLAYER` consulte uniquement ses fiches associées et `ADMIN` n'accède pas aux données de club.
 - La photo de composition JPG/PNG est validée par décodage serveur puis conservée octet pour octet, sans zoom, recadrage ni transformation du visage. Un PNG transparent est recommandé.
+- Le format sportif fournit des valeurs par défaut, mais chaque compétition conserve ses propres nombres de titulaires et finisseurs. Une modification ne doit pas affecter les autres compétitions.
 - Les identifiants de joueur, photo et modèle ne doivent jamais exposer les données d'un autre club via une requête non autorisée.
 - `LineupSlot.slotKey` est unique par composition et correspond à la définition figée du format au moment du match.
 - L'emplacement sportif, le statut titulaire/finisseur et le numéro de maillot sont indépendants. Le numéro habituel du joueur ne sert que de proposition initiale.
