@@ -5,6 +5,7 @@ import { ClubsModule } from './clubs/clubs.module.js';
 import { CompetitionsModule } from './competitions/competitions.module.js';
 import { DatabaseModule } from './database/database.module.js';
 import { PlayersModule } from './players/players.module.js';
+import { MatchesModule } from './matches/matches.module.js';
 import { HealthController } from './health.controller.js';
 
 @Module({
@@ -15,6 +16,7 @@ import { HealthController } from './health.controller.js';
     ClubsModule,
     PlayersModule,
     CompetitionsModule,
+    MatchesModule,
   ],
   controllers: [HealthController],
 })

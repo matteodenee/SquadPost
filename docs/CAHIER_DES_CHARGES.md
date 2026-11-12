@@ -40,7 +40,9 @@ Application web de communication pour clubs sportifs amateurs/universitaires, d'
 - Une compétition et ses saisons peuvent être désactivées sans suppression de leur historique. Le libellé de saison est obligatoire ; ses dates sont facultatives et, lorsqu'elles sont toutes deux présentes, la fin ne peut précéder le début.
 - Compétitions/saisons historisées ; un même joueur peut participer à plusieurs compétitions.
 - Création match manuelle ou depuis calendrier de saison ; base d'adversaires avec nom, logo, couleurs.
-- Informations match : adversaire, compétition/saison, journée, date, heure, lieu, domicile/extérieur/neutre (facultatif), statut à venir/en cours/terminé.
+- Informations match : adversaire, compétition/saison, journée, date, heure, lieu, domicile/extérieur/neutre (facultatif), statut à venir/terminé/annulé et scores facultatifs du club et de l'adversaire.
+- Les dates et heures saisies dans le fuseau du navigateur sont transmises comme instants ISO 8601, conservées avec leur fuseau en base puis affichées dans le fuseau local de l'utilisateur.
+- Premier jalon matchs : création, consultation, modification, annulation et saisie manuelle du score final, adversaires réutilisables et désactivables, contrôle serveur du club, et instantané des titulaires/finisseurs du format. L'import de calendrier et le logo adversaire restent à développer.
 
 ### Compositions
 - Une composition sportive enregistrée par match, modifiable même après publication.

@@ -19,8 +19,8 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 | `SportEventType` | id, sportId, name, points, impactsScore, appliesToPlayer?, enabled | Utilisé V2 ; rugby préchargé |
 | `Competition` | id, clubId, sportFormatId, name, starterCount, finisherCount, inactiveAt? | Les nombres sont copiés depuis le format puis réglables par compétition ; plusieurs saisons |
 | `Season` | id, competitionId, label, startDate?, endDate?, inactiveAt? | Libellé unique par compétition ; dates facultatives ; conservation historique |
-| `Opponent` | id, clubId, name, shortName, logoAssetId?, colors? | Réutilisable entre matchs |
-| `Match` | id, clubId, seasonId, opponentId, round?, dateTime?, venue?, homeAwayNeutral?, status | Pas de surnombre hors format |
+| `Opponent` | id, clubId, name, shortName, primaryColor?, secondaryColor?, inactiveAt? | Réutilisable entre matchs et isolé dans son club ; logo ajouté dans un jalon ultérieur |
+| `Match` | id, clubId, seasonId, opponentId, round?, scheduledAt?, venue?, location?, status, clubScore?, opponentScore?, snapshotStarterCount, snapshotFinisherCount, snapshotSportName, snapshotFormatName | Statut à venir/terminé/annulé ; scores manuels facultatifs ; capacité et libellés sportifs figés à la création ; saison et adversaire obligatoirement issus du même club |
 | `Lineup` | id, matchId unique, status, updatedAt | Une composition par match ; statut modifié explicitement, jamais par un export |
 | `LineupSlot` | id, lineupId, slotKey, type (starter/finisher), playerId?, jerseyNumber? | Emplacement sportif parfois vide ; joueur unique dans la composition ; numéro du match distinct de l'emplacement et non nécessairement consécutif |
 | `LineupRole` | lineupId, roleKey, playerId | Capitaine / buteur / personnalisés |
@@ -39,13 +39,17 @@ Ne pas traiter ce document comme un schéma SQL définitif. Les relations et con
 - Dans le jalon actuel, seul un `COM_MANAGER` membre actif du club gère son effectif ; `PLAYER` consulte uniquement ses fiches associées et `ADMIN` n'accède pas aux données de club.
 - La photo de composition JPG/PNG est validée par décodage serveur puis conservée octet pour octet, sans zoom, recadrage ni transformation du visage. Un PNG transparent est recommandé.
 - Le format sportif fournit des valeurs par défaut, mais chaque compétition conserve ses propres nombres de titulaires et finisseurs. Une modification ne doit pas affecter les autres compétitions.
+- Un match copie la capacité et les libellés sportifs courants de sa compétition. Les changements ultérieurs de format ou de capacité ne réécrivent pas le match existant.
+- `Match.scheduledAt` est un instant avec fuseau (`timestamptz`) ; l'interface convertit la saisie locale vers ISO 8601 et reconvertit l'instant au fuseau d'affichage.
+- Les scores du premier jalon sont facultatifs et saisis manuellement. Lorsque les événements live V2 seront disponibles, ils deviendront la source de vérité du score calculé.
+- Le match constitue le point d'ancrage stable de la future composition : la sélection des joueurs, les numéros propres au match et le choix ultérieur d'un modèle d'affiche seront reliés à son identifiant sans dépendre du moteur de rendu.
 - Les identifiants de joueur, photo et modèle ne doivent jamais exposer les données d'un autre club via une requête non autorisée.
 - `LineupSlot.slotKey` est unique par composition et correspond à la définition figée du format au moment du match.
 - L'emplacement sportif, le statut titulaire/finisseur et le numéro de maillot sont indépendants. Le numéro habituel du joueur ne sert que de proposition initiale.
 - Les doublons de numéros de maillot dans une composition doivent être détectés et signalés afin de permettre leur correction ; aucune séquence de numéros n'est imposée.
 - Un joueur ne peut être placé qu'une fois dans une même composition ; échange atomique entre deux emplacements.
 - Les changements futurs d'un format ne doivent pas réécrire silencieusement les anciennes compositions : figer une **copie de la configuration du format au moment du match** ou versionner le format.
-- En V2, le score est recalculé depuis les événements valides, pas maintenu manuellement en parallèle comme unique vérité.
+- En V2, le score sera recalculé depuis les événements valides et remplacera le score manuel comme source de vérité.
 - L'archivage n'efface pas les associations historiques.
 - Les compositions historiques conservent les données sportives et les informations du match, pas une copie des photos ni des affiches rendues.
 - Une affiche régénérée utilise les photos actuellement disponibles dans les profils. Une photo remplacée peut être supprimée dès qu'aucun traitement en cours ne l'utilise.

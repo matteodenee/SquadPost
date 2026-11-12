@@ -2,6 +2,7 @@ import { FormEvent, useCallback, useEffect, useState } from 'react';
 import { AdminUsersPanel } from './AdminUsersPanel';
 import { ClubsPanel, type Club } from './ClubsPanel';
 import { CompetitionsPanel } from './CompetitionsPanel';
+import { MatchesPanel } from './MatchesPanel';
 import { MyPlayerProfilesPanel, PlayersPanel } from './PlayersPanel';
 
 type UserRole = 'PLAYER' | 'COM_MANAGER' | 'ADMIN';
@@ -71,9 +72,9 @@ export function App() {
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [activeClub, setActiveClub] = useState<Club | null>(null);
-  const [dashboardView, setDashboardView] = useState<'overview' | 'roster' | 'competitions'>(
-    'overview',
-  );
+  const [dashboardView, setDashboardView] = useState<
+    'overview' | 'roster' | 'competitions' | 'matches'
+  >('overview');
 
   const handleActiveClubChange = useCallback((club: Club | null) => {
     setActiveClub(club);
@@ -217,6 +218,11 @@ export function App() {
                     ? () => setDashboardView('competitions')
                     : undefined
                 }
+                onOpenMatches={
+                  user.role === 'COM_MANAGER' && activeClub
+                    ? () => setDashboardView('matches')
+                    : undefined
+                }
                 role={user.role}
               />
             )}
@@ -226,6 +232,9 @@ export function App() {
           )}
           {dashboardView === 'competitions' && user.role === 'COM_MANAGER' && activeClub && (
             <CompetitionsPanel club={activeClub} onBack={() => setDashboardView('overview')} />
+          )}
+          {dashboardView === 'matches' && user.role === 'COM_MANAGER' && activeClub && (
+            <MatchesPanel club={activeClub} onBack={() => setDashboardView('overview')} />
           )}
         </section>
       </main>

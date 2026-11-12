@@ -43,6 +43,10 @@
 - Le format et les nombres enregistrés sur la compétition fixeront le nombre d'emplacements des futurs matchs.
 - L'adversaire peut être choisi dans une base ou créé.
 - Terrain neutre/domicile/extérieur est facultatif.
+- Le match peut être à venir, terminé ou annulé ; le score du club et le score adverse restent facultatifs et modifiables.
+- La date et l'heure sont saisies localement, stockées comme un instant avec fuseau et réaffichées dans le fuseau de l'utilisateur.
+- La saison et l'adversaire doivent appartenir au club actif. Un `PLAYER` ou un `ADMIN` ne peut pas gérer les matchs du club.
+- La capacité de la compétition est copiée dans le match lors de sa création afin de préserver l'historique si le format est ensuite modifié.
 
 ## US-05 — Composer l'équipe
 **En tant que** responsable communication, **je veux** glisser les joueurs sur les emplacements de titulaires et finisseurs.

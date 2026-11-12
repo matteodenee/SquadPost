@@ -145,6 +145,12 @@ test('affiche les clubs et les invitations dans le dashboard COM_MANAGER', async
       body: JSON.stringify({ competitions: [] }),
     }),
   );
+  await page.route(`**/api/clubs/${clubId}/opponents`, async (route) =>
+    route.fulfill({ contentType: 'application/json', body: JSON.stringify({ opponents: [] }) }),
+  );
+  await page.route(`**/api/clubs/${clubId}/matches`, async (route) =>
+    route.fulfill({ contentType: 'application/json', body: JSON.stringify({ matches: [] }) }),
+  );
 
   await page.goto('/');
 
@@ -162,4 +168,8 @@ test('affiche les clubs et les invitations dans le dashboard COM_MANAGER', async
   await page.getByRole('button', { name: 'Compétitions et saisons' }).click();
   await expect(page.getByRole('heading', { name: 'Compétitions et saisons' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Créer une compétition' })).toBeVisible();
+  await page.getByRole('button', { name: 'Retour aux clubs' }).click();
+  await page.getByRole('button', { name: 'Adversaires et matchs' }).click();
+  await expect(page.getByRole('heading', { name: 'Adversaires et matchs' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Créer un match' })).toBeVisible();
 });

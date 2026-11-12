@@ -19,6 +19,18 @@ enum MembershipStatus {
   SUSPENDED @map("suspended")
 }
 
+enum MatchLocation {
+  HOME
+  AWAY
+  NEUTRAL
+}
+
+enum MatchStatus {
+  UPCOMING
+  FINISHED
+  CANCELLED
+}
+
 model User {
   id                 String           @id @default(uuid()) @db.Uuid
   email              String           @unique
@@ -52,6 +64,8 @@ model Club {
   players        ClubPlayer[]
   mediaAssets    MediaAsset[]
   competitions   Competition[]
+  opponents      Opponent[]
+  matches        Match[]
 
   @@index([primarySportId])
 }
@@ -109,9 +123,53 @@ model Season {
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
   competition   Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+  matches       Match[]
 
   @@unique([competitionId, label])
   @@index([competitionId, inactiveAt])
+}
+
+model Opponent {
+  id             String    @id @default(uuid()) @db.Uuid
+  clubId         String    @db.Uuid
+  name           String
+  shortName      String
+  primaryColor   String?
+  secondaryColor String?
+  inactiveAt     DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  club           Club      @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  matches        Match[]
+
+  @@index([clubId, inactiveAt])
+}
+
+model Match {
+  id                    String         @id @default(uuid()) @db.Uuid
+  clubId                String         @db.Uuid
+  seasonId              String         @db.Uuid
+  opponentId            String         @db.Uuid
+  round                 String?
+  scheduledAt           DateTime?      @db.Timestamptz(3)
+  venue                 String?
+  location              MatchLocation?
+  status                MatchStatus    @default(UPCOMING)
+  snapshotStarterCount  Int
+  snapshotFinisherCount Int
+  snapshotSportName     String
+  snapshotFormatName    String
+  clubScore             Int?
+  opponentScore         Int?
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  club                  Club           @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  season                Season         @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+  opponent              Opponent       @relation(fields: [opponentId], references: [id], onDelete: Restrict)
+
+  @@index([clubId, scheduledAt])
+  @@index([seasonId])
+  @@index([opponentId])
 }
 
 model ClubMembership {

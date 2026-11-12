@@ -846,6 +846,88 @@ select:focus {
   margin: 0.5rem 0;
 }
 
+.matches-panel {
+  margin-top: 1rem;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 1.2rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: rgb(18 22 31 / 88%);
+}
+.matches-panel h3,
+.matches-panel h4 {
+  margin: 0.35rem 0 0;
+}
+.matches-panel h3 {
+  font-size: 1.7rem;
+}
+.matches-panel__header,
+.matches-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.match-tabs {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+  border-radius: 0.8rem;
+  padding: 0.25rem;
+  background: #0d1119;
+}
+.match-tabs button {
+  border: 0;
+  border-radius: 0.6rem;
+  padding: 0.7rem 1rem;
+  color: #9299a5;
+  background: transparent;
+  font-weight: 800;
+}
+.match-tabs button[aria-selected='true'] {
+  color: #fff;
+  background: #262c37;
+}
+.matches-toolbar {
+  align-items: center;
+  margin-top: 1.25rem;
+}
+.sport-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  border: 1px solid #303643;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: #0d1119;
+}
+.sport-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.sport-list article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #303643;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  background: #0d1119;
+}
+.sport-list article > div:first-child {
+  display: grid;
+  gap: 0.25rem;
+}
+.sport-list article > div:first-child span {
+  color: #9299a5;
+  font-size: 0.82rem;
+}
+.sport-list article.is-disabled {
+  opacity: 0.62;
+}
+
 @media (min-width: 58rem) {
   .auth-shell {
     grid-template-columns: minmax(0, 1fr) minmax(24rem, 29rem);
@@ -902,6 +984,13 @@ select:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: end;
   }
+  .sport-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sport-form h4,
+  .sport-form .button {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -938,6 +1027,11 @@ select:focus {
     align-items: stretch;
     flex-direction: column;
   }
+  .matches-panel__header,
+  .matches-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
   .user-search {
     grid-template-columns: 1fr;
   }
@@ -952,6 +1046,9 @@ select:focus {
     display: grid;
   }
   .season-list li {
+    grid-template-columns: 1fr;
+  }
+  .sport-list article {
     grid-template-columns: 1fr;
   }
 }

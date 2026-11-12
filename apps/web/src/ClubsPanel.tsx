@@ -26,6 +26,7 @@ interface ClubsPanelProps {
   onActiveClubChange?: (club: Club | null) => void;
   onOpenRoster?: () => void;
   onOpenCompetitions?: () => void;
+  onOpenMatches?: () => void;
 }
 
 async function readError(response: Response) {
@@ -44,6 +45,7 @@ export function ClubsPanel({
   onActiveClubChange,
   onOpenRoster,
   onOpenCompetitions,
+  onOpenMatches,
 }: ClubsPanelProps) {
   const [clubs, setClubs] = useState<Club[]>([]);
   const [selectedClubId, setSelectedClubId] = useState<string | null>(null);
@@ -337,6 +339,11 @@ export function ClubsPanel({
               {onOpenCompetitions && (
                 <button className="button button--ghost" onClick={onOpenCompetitions} type="button">
                   Compétitions et saisons
+                </button>
+              )}
+              {onOpenMatches && (
+                <button className="button button--ghost" onClick={onOpenMatches} type="button">
+                  Adversaires et matchs
                 </button>
               )}
             </div>
